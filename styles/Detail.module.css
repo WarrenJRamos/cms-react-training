@@ -1,0 +1,15 @@
+.detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+.detail-list-item {
+
+}
+
+.lead {
+    font-weight: bold;
+}

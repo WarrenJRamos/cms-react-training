@@ -1,0 +1,20 @@
+.comic {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comic .thumbnail-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.comic .thumbnail-container .image-cont {
+}
+
+.comic .comic-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
