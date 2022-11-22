@@ -2,19 +2,18 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 183px;
 }
 
 .comic .thumbnail-container {
     position: relative;
     display: flex;
-    justify-content: center;
-}
-
-.comic .thumbnail-container .image-cont {
+    flex-direction: column;
+    align-items: center;
 }
 
 .comic .comic-body {
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
 }

@@ -7,18 +7,16 @@ import classes from "../styles/Comic.module.css";
 export const Comic = ({ comicData }) => {
     return (
         <div className={classes["comic"]}>
-            <div className={classes["thumbnail-container"]}>
-                <div className={classes["image-cont"]}>
-                    <Image
-                        src={comicData.thumbnail}
-                        alt={comicData.title}
-                        width={183}
-                        height={276}
-                    />
-                </div>
+            <div className={`${classes["thumbnail-container"]} ${classes["comic-item"]}`}>
+                <Image
+                    src={comicData.thumbnail}
+                    alt={comicData.title}
+                    width={183}
+                    height={276}
+                />
                 <Button />
             </div>
-            <div className={classes["comic-body"]}>
+            <div className={`${classes["comic-body"]} ${classes["comic-item"]}`}>
                 <h3>{comicData.title}</h3>
                 <Detail
                     issueNumber={comicData.issueNumber}

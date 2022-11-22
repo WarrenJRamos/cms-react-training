@@ -15,8 +15,9 @@ export default function Home() {
       <main className={styles.main}>
         <div style={{
           display: "grid",
-          gridTemplateColumns: "183px 183px 183px 183px 183px",
+          gridTemplateColumns: "repeat(auto-fit, minmax(183px, 1fr))",
           gap: "60px 26px",
+          width: "100%"
         }}>
           {
             comics.map((comic) => {
