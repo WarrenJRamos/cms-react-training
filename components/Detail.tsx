@@ -1,17 +1,28 @@
 import React from "react";
 import classes from "../styles/Detail.module.css";
+import { Creator, CreatorItem } from "../types/shared_types";
 
-export const Detail = ({ issueNumber, publishDate, creators }) => {
-    const getCreators = () => {
+type DetailProps = {
+    issueNumber: number,
+    publishDate: string,
+    creators: Creator,
+}
+
+type getCreatorsFn = () => string;
+
+type getDateFn = () => string;
+
+export const Detail = ({ issueNumber, publishDate, creators }: DetailProps) => {
+    const getCreators: getCreatorsFn = () => {
         const creatorsGroup = creators.items.map((creator) => {
             return creator.name;
         });
         const creatorsFormatted =
-            creatorsGroup.length > 0 ? creatorsGroup.join(", ") : ["N/A"];
+            creatorsGroup.length > 0 ? creatorsGroup.join(", ") : "N/A";
         return creatorsFormatted;
     };
 
-    const getDate = () => {
+    const getDate: getDateFn = () => {
         const monthNames = [
             "January",
             "February",

@@ -3,8 +3,13 @@ import React from "react";
 import { Button } from "./Button";
 import { Detail } from "./Detail";
 import classes from "../styles/Comic.module.css";
+import { ComicData } from "../types/shared_types";
 
-export const Comic = ({ comicData }) => {
+type ComicDataProps = {
+    comicData: ComicData
+}
+
+export const Comic = ({ comicData }: ComicDataProps) => {
     return (
         <div className={classes["comic"]}>
             <div

@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import { Comic } from "../components/Comic";
 import useRequest from "../hooks/use-request";
 import { useEffect, useState } from "react";
+import { ComicData } from "../types/shared_types";
 
 export default function Home() {
     const {
@@ -15,7 +16,7 @@ export default function Home() {
         hasError,
         setHasError,
     } = useRequest();
-    const [comics, setComics] = useState([]);
+    const [comics, setComics] = useState<ComicData[]>([]);
 
     useEffect(() => {
         fetchData({ endpoint: getMarvelComicsResourceUrl() })
