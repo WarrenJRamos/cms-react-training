@@ -45,7 +45,7 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                {isLoading && <h1>Loading comics...</h1>}
+                {isLoading && <h1 data-testid="loading">Loading comics...</h1>}
                 {hasError && (
                     <p>
                         Something went wrong. Unable to retrieve comics.
