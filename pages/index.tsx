@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Comic } from "../components/Comic";
+import { Comic } from "../components/Comic/Comic";
 import useRequest from "../hooks/use-request";
 import { useEffect, useState } from "react";
 import { ComicData } from "../types/shared_types";

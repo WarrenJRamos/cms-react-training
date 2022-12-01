@@ -18,7 +18,7 @@ export type Date = {
 }
 
 export type Creator = {
-    items?: CreatorItem[],
+    items: CreatorItem[],
 }
 
 export type CreatorItem = {
