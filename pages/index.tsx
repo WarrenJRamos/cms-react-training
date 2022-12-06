@@ -4,6 +4,8 @@ import { Comic } from "../components/Comic/Comic";
 import useRequest from "../hooks/use-request";
 import { useEffect, useState } from "react";
 import { ComicData } from "../types/shared_types";
+import { Filter } from "../components/Filter";
+import Context from "../context/index-store";
 
 export default function Home() {
     const {
@@ -19,7 +21,7 @@ export default function Home() {
     const [comics, setComics] = useState<ComicData[]>([]);
 
     useEffect(() => {
-        fetchData({ endpoint: getMarvelComicsResourceUrl() })
+        fetchData({ endpoint: getMarvelComicsResourceUrl("https://gateway.marvel.com/v1/public/comics?") })
             .then((data) => {
                 console.log(data);
                 setComics(data.data.results);
@@ -33,6 +35,11 @@ export default function Home() {
             });
     }, []);
 
+    const ctx = {
+        comics,
+        setComics
+    };
+
     return (
         <div className={styles.container}>
             <Head>
@@ -44,30 +51,35 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                {isLoading && <h1 data-testid="loading">Loading comics...</h1>}
-                {hasError && (
-                    <p>
-                        Something went wrong. Unable to retrieve comics.
-                        {hasError}
-                    </p>
-                )}
-                {!isLoading && !hasError && isSuccess && (
-                    <div
-                        style={{
-                            display: "grid",
-                            gridTemplateColumns:
-                                "repeat(auto-fit, minmax(183px, 1fr))",
-                            gap: "60px 26px",
-                            width: "100%",
-                        }}
-                    >
-                        {comics.map((comic) => {
-                            return <Comic key={comic.id} comicData={comic} />;
-                        })}
-                    </div>
-                )}
-            </main>
+            <Context.Provider value={ctx}>
+                <main className={styles.main}>
+                    {isLoading && <h1 data-testid="loading">Loading comics...</h1>}
+                    {hasError && (
+                        <p>
+                            Something went wrong. Unable to retrieve comics.
+                            {hasError}
+                        </p>
+                    )}
+                    {!isLoading && !hasError && isSuccess && (
+                        <>
+                            <Filter />
+                            <div
+                                style={{
+                                    display: "grid",
+                                    gridTemplateColumns:
+                                        "repeat(auto-fit, minmax(183px, 1fr))",
+                                    gap: "60px 26px",
+                                    width: "100%",
+                                }}
+                            >
+                                {comics.map((comic) => {
+                                    return <Comic key={comic.id} comicData={comic} />;
+                                })}
+                            </div>
+                        </>
+                    )}
+                </main>
+            </Context.Provider>
 
             <footer></footer>
         </div>
