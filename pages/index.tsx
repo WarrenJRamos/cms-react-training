@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { ComicData } from "../types/shared_types";
 import { Filter } from "../components/Filter";
 import Context from "../context/index-store";
+import { Header } from "../components/Header";
 
 export default function Home() {
     const {
@@ -19,6 +20,7 @@ export default function Home() {
         setHasError,
     } = useRequest();
     const [comics, setComics] = useState<ComicData[]>([]);
+    const [favorites, setFavorites] = useState<ComicData[]>([]);
 
     useEffect(() => {
         fetchData({ endpoint: getMarvelComicsResourceUrl("https://gateway.marvel.com/v1/public/comics?") })
@@ -37,7 +39,9 @@ export default function Home() {
 
     const ctx = {
         comics,
-        setComics
+        setComics,
+        favorites,
+        setFavorites
     };
 
     return (
@@ -52,6 +56,7 @@ export default function Home() {
             </Head>
 
             <Context.Provider value={ctx}>
+                <Header />
                 <main className={styles.main}>
                     {isLoading && <h1 data-testid="loading">Loading comics...</h1>}
                     {hasError && (

@@ -14,3 +14,7 @@
 .button .bolt {
     color: #F8F8F2;
 }
+
+.button .bolt.favorited{
+    color: red;
+}
