@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type getMarvelComicsResourceUrlFn = () => string;
+type getMarvelComicsResourceUrlFn = (endpoint: string) => string;
 
 type GenericObject = { [key: string]: any };
 
@@ -20,8 +20,8 @@ const useRequest = () => {
     const [isSuccess, setIsSuccess] = useState<boolean>(false);
     const [hasError, setHasError] = useState<boolean>(false);
 
-    const getMarvelComicsResourceUrl: getMarvelComicsResourceUrlFn = () => {
-        const serviceEndpoint = "https://gateway.marvel.com/v1/public/comics?";
+    const getMarvelComicsResourceUrl: getMarvelComicsResourceUrlFn = (endpoint) => {
+        const serviceEndpoint = endpoint;
         let timestamp = new Date().getTime();
         timestamp = 1669230418424;
         const hashInputData = `${timestamp}${process.env.NEXT_PUBLIC_MARVEL_API_KEY_PRIVATE}${process.env.NEXT_PUBLIC_MARVEL_API_KEY_PUBLIC}`;
