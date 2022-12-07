@@ -23,6 +23,13 @@ export default function Home() {
     const [favorites, setFavorites] = useState<ComicData[]>([]);
 
     useEffect(() => {
+        const favoriteComics = localStorage.getItem('favorite_comics');
+        if (favoriteComics) {
+            setFavorites(JSON.parse(favoriteComics));
+        }
+    }, []);
+
+    useEffect(() => {
         fetchData({ endpoint: getMarvelComicsResourceUrl("https://gateway.marvel.com/v1/public/comics?") })
             .then((data) => {
                 console.log(data);
