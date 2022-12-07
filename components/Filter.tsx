@@ -39,6 +39,7 @@ export const Filter = () => {
     const [selectedCreator, setSelectedCreator] = useState<string>(
         creatorFilterOptions[0].value
     );
+    const [didMount, setDidMount] = useState<boolean>(false);
     const context = useContext(Context);
 
     const onCharacterChange: ChangeEventHandler<HTMLSelectElement> = (
@@ -101,17 +102,29 @@ export const Filter = () => {
             });
     }
 
+    // Since useEffect always runs for the first time the component mounts, no matter the
+    // dependency array, I have a didMount state to only check the filter select values
+    // afterwards
+    // If I don't have this, then the useEffect below will run again when this component
+    // is initially rendered and mounted into the DOM even though I already fetched the
+    // comics in <Home />
     useEffect(() => {
-        console.log(
-            `Inside useEffect - Selected Character: ${
-                selectedCharacter || "N/A"
-            }, Selected Creator: ${selectedCreator || "N/A"}`
-        );
-        if (selectedCharacter || selectedCreator) {
-            fetchFilteredComics();
-        }
-        if (!selectedCharacter && !selectedCreator) {
-            fetchDefaultComics();
+        setDidMount(true);
+    }, []);
+
+    useEffect(() => {
+        if (didMount) {
+            console.log(
+                `Inside useEffect - Selected Character: ${
+                    selectedCharacter || "N/A"
+                }, Selected Creator: ${selectedCreator || "N/A"}`
+            );
+            if (selectedCharacter || selectedCreator) {
+                fetchFilteredComics();
+            }
+            if (!selectedCharacter && !selectedCreator) {
+                fetchDefaultComics();
+            }
         }
     }, [selectedCharacter, selectedCreator]);
 

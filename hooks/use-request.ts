@@ -47,7 +47,7 @@ const useRequest = () => {
                     ? JSON.stringify(requestConfig.body)
                     : null,
             });
-            console.log(response);
+            // console.log(response);
             if (response.status !== 200) {
                 throw new Error(response.status.toString());
             }
