@@ -56,6 +56,8 @@ const useRequest = () => {
             return responseData;
         } catch(error) {
             console.log(error);
+            console.log("Inside error");
+            setHasError(true);
         }
     };
 

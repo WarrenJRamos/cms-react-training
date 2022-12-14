@@ -7,6 +7,7 @@ import { ComicData } from "../types/shared_types";
 import { Filter } from "../components/Filter";
 import Context from "../context/index-store";
 import { Header } from "../components/Header";
+import { ComicList } from "../components/Comic/ComicList";
 
 export default function Home() {
     const {
@@ -75,19 +76,7 @@ export default function Home() {
                     {!isLoading && !hasError && isSuccess && (
                         <>
                             <Filter />
-                            <div
-                                style={{
-                                    display: "grid",
-                                    gridTemplateColumns:
-                                        "repeat(auto-fit, minmax(183px, 1fr))",
-                                    gap: "60px 26px",
-                                    width: "100%",
-                                }}
-                            >
-                                {comics.map((comic) => {
-                                    return <Comic key={comic.id} comicData={comic} />;
-                                })}
-                            </div>
+                            <ComicList comics={comics}/>
                         </>
                     )}
                 </main>
