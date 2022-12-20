@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import classes from "../styles/Home.module.css";
 import { Comic } from "../components/Comic/Comic";
 import useRequest from "../hooks/use-request";
 import { useEffect, useState } from "react";
@@ -8,6 +8,8 @@ import { Filter } from "../components/Filter";
 import Context from "../context/index-store";
 import { Header } from "../components/Header";
 import { ComicList } from "../components/Comic/ComicList";
+import { Footer } from "../components/Footer";
+import { Hero } from "../components/Hero";
 
 export default function Home() {
     const {
@@ -53,7 +55,7 @@ export default function Home() {
     };
 
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
                 <title>Warren's Marvel App</title>
                 <meta
@@ -65,7 +67,8 @@ export default function Home() {
 
             <Context.Provider value={ctx}>
                 <Header />
-                <main className={styles.main}>
+                <main className={`${classes["main"]}`}>
+                    <Hero />
                     {isLoading && <h1 data-testid="loading">Loading comics...</h1>}
                     {hasError && (
                         <p>
@@ -80,9 +83,8 @@ export default function Home() {
                         </>
                     )}
                 </main>
+                <Footer />
             </Context.Provider>
-
-            <footer></footer>
         </div>
     );
 }

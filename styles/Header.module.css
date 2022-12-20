@@ -1,0 +1,23 @@
+.nav {
+    height: 179px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 60px;
+}
+
+.nav__logo {
+
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 327px;
+}
+
+.nav__list-item {
+
+}
