@@ -8,9 +8,10 @@ import React from "react";
 export const Pagination = ({
     range,
     totalNumberOfComics,
+    totalNumberOfCurrentComics,
     currentPage,
     setCurrentPage,
-    reachedTheEnd
+    disableRightPagination
 }) => {
     const onLeftChevronClickHandler = () => {
         setCurrentPage((prev) => {
@@ -23,12 +24,17 @@ export const Pagination = ({
         });
     };
 
-    const showLeftChevron = currentPage > 0 && true;
-    const showRightChevron = reachedTheEnd;
+    const disableLeftChevron = currentPage !== 1;
+    const disableRightChevron = disableRightPagination;
+
+    let end = range.end;
+    if (range.end > totalNumberOfComics) {
+        end = range.end - totalNumberOfComics;
+    }
 
     return (
         <div>
-            {showLeftChevron && (
+            {disableLeftChevron && (
                 <button onClick={onLeftChevronClickHandler}>
                     <FontAwesomeIcon
                         icon={faChevronLeft}
@@ -37,10 +43,10 @@ export const Pagination = ({
                 </button>
             )}
             <span>
-                {range.start}-{range.end}
+                {range.start}-{end}
             </span>{" "}
             of {totalNumberOfComics}
-            {showRightChevron && (
+            {disableRightChevron && (
                 <button onClick={onRightChevronClickHandler}>
                     <FontAwesomeIcon
                         icon={faChevronRight}
