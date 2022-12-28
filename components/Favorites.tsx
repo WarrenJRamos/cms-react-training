@@ -1,19 +1,23 @@
 import React, { useContext } from "react";
 import Context from "../context/index-store";
+import { FavoriteItem } from "./FavoriteItem";
+import classes from "../styles/Favorites.module.css"
 
 export const Favorites = () => {
     const context = useContext(Context);
     return (
-        <span>
-            My Favorites
+        <div className={`${classes["favorites"]}`}>
+            <h2 className={`${classes["favorites__title"]}`}>Favorites</h2>
             {context.favorites.map((favorite) => {
                 return (
-                    <p key={favorite.id}>
-                        {favorite.id}, {favorite.title}
-                    </p>
+                    <FavoriteItem
+                        key={favorite.id}
+                        title={favorite.title}
+                        issue={favorite.issueNumber}
+                        thumbnail={favorite.thumbnail}
+                    />
                 );
             })}
-            {context.favorites.length}
-        </span>
+        </div>
     );
 };

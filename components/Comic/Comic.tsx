@@ -23,7 +23,7 @@ export const Comic = ({ comicData }: ComicDataProps) => {
     return (
         <div className={classes["comic"]} data-testid="comic">
             <div
-                className={`${classes["thumbnail-container"]} ${classes["comic-item"]}`}
+                className={`${classes["thumbnail-container"]}`}
             >
                 <Image
                     src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
@@ -34,7 +34,7 @@ export const Comic = ({ comicData }: ComicDataProps) => {
                 <Button comicData={comicData} alreadyInFavorites={alreadyInFavorites} disableButton={favoriteLimitHasBeenReached}/>
             </div>
             <div
-                className={`${classes["comic-body"]} ${classes["comic-item"]}`}
+                className={`${classes["comic-body"]}`}
             >
                 <h3 data-testid="title">{comicData.title}</h3>
                 <Detail

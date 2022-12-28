@@ -11,7 +11,7 @@ export const Footer = () => {
             </div>
             <div className={`${classes["footer__info"]}`}>
                 <a href="#" className={`${classes["footer__info-item"]}`}>Privacy Policy</a>
-                |
+                <span>|</span>
                 <a href="#" className={`${classes["footer__info-item"]}`}>Terms of Service</a>
             </div>
             <div className={`${classes["footer__copyright"]}`}>

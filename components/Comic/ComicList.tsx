@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "../Pagination";
 import { Comic } from "./Comic";
+import classes from "../../styles/ComicList.module.css"
 
 export const ComicList = ({ comics }) => {
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -30,15 +31,22 @@ export const ComicList = ({ comics }) => {
     // }
 
     return (
-        <>
+        <div className={`${classes["container"]}`}>
+            <div
+                className={`${classes["grid"]}`}
+            >
+                {currentComics.map((comic) => {
+                    return <Comic key={comic.id} comicData={comic} />;
+                })}
+            </div>
             <Pagination
                 range={{
                     start: indexOfFirstComic,
                     end:
                         indexOfLastComic > comics.length
                             ? indexOfLastComic -
-                              indexOfFirstComic +
-                              currentComics.length
+                                indexOfFirstComic +
+                                currentComics.length
                             : indexOfLastComic,
                 }}
                 totalNumberOfComics={comics.length}
@@ -47,18 +55,6 @@ export const ComicList = ({ comics }) => {
                 setCurrentPage={setCurrentPage}
                 disableRightPagination={disableRightPagination}
             />
-            <div
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(183px, 1fr))",
-                    gap: "60px 26px",
-                    width: "100%",
-                }}
-            >
-                {currentComics.map((comic) => {
-                    return <Comic key={comic.id} comicData={comic} />;
-                })}
-            </div>
-        </>
+        </div>
     );
 };

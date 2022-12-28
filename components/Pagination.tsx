@@ -4,6 +4,7 @@ import {
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import classes from "../styles/Pagination.module.css";
 
 export const Pagination = ({
     range,
@@ -11,7 +12,7 @@ export const Pagination = ({
     totalNumberOfCurrentComics,
     currentPage,
     setCurrentPage,
-    disableRightPagination
+    disableRightPagination,
 }) => {
     const onLeftChevronClickHandler = () => {
         setCurrentPage((prev) => {
@@ -33,27 +34,25 @@ export const Pagination = ({
     }
 
     return (
-        <div>
-            {disableLeftChevron && (
-                <button onClick={onLeftChevronClickHandler}>
-                    <FontAwesomeIcon
-                        icon={faChevronLeft}
-                        style={{ width: "20px" }}
-                    />
-                </button>
-            )}
+        <div className={`${classes["pagination"]}`}>
+            <button
+                onClick={onLeftChevronClickHandler}
+                className={`${classes["pagination__arrow"]}`}
+                disabled={!disableLeftChevron}
+            >
+                <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
             <span>
                 {range.start}-{end}
-            </span>{" "}
-            of {totalNumberOfComics}
-            {disableRightChevron && (
-                <button onClick={onRightChevronClickHandler}>
-                    <FontAwesomeIcon
-                        icon={faChevronRight}
-                        style={{ width: "20px" }}
-                    />
-                </button>
-            )}
+                &nbsp;of {totalNumberOfComics}
+            </span>
+            <button
+                onClick={onRightChevronClickHandler}
+                className={`${classes["pagination__arrow"]}`}
+                disabled={!disableRightChevron}
+            >
+                <FontAwesomeIcon icon={faChevronRight} />
+            </button>
         </div>
     );
 };

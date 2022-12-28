@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler, useContext, useEffect, useState } from "react";
 import Context from "../context/index-store";
 import useRequest from "../hooks/use-request";
+import classes from "../styles/Filter.module.css"
 
 const characterFilterOptions = [
     { value: "", text: "Character" },
@@ -129,9 +130,9 @@ export const Filter = () => {
     }, [selectedCharacter, selectedCreator]);
 
     return (
-        <div>
+        <div className={`${classes["filter"]}`}>
             Filter by:
-            <select value={selectedCharacter} onChange={onCharacterChange}>
+            <select value={selectedCharacter} onChange={onCharacterChange} className={`${classes["filter__dropdown"]}`}>
                 {characterFilterOptions.map((charOption) => {
                     return (
                         <option value={charOption.value} key={charOption.value}>
@@ -140,7 +141,7 @@ export const Filter = () => {
                     );
                 })}
             </select>
-            <select value={selectedCreator} onChange={onCreatorChange}>
+            <select value={selectedCreator} onChange={onCreatorChange} className={`${classes["filter__dropdown"]}`}>
                 {creatorFilterOptions.map((creatorOption) => {
                     return (
                         <option

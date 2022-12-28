@@ -1,8 +1,9 @@
 .comic {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
     gap: 20px;
-    width: 183px;
+    max-width: 183px;
 }
 
 .comic .thumbnail-container {
