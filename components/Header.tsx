@@ -18,12 +18,16 @@ export const Header = () => {
                 <li className={`${classes["nav__list-item"]}`}>Home</li>
                 <li className={`${classes["nav__list-item"]}`}>Shop</li>
                 <li className={`${classes["nav__list-item"]}`}>
-                    <FontAwesomeIcon
-                        icon={faBolt}
-                        className={`${classes["bolt"]}`}
-                    />
+                    <span>
+                        <FontAwesomeIcon
+                            icon={faBolt}
+                            className={`${classes["bolt"]}`}
+                        />
+                    </span>
                     <span>My Favorites</span>
-                    <span>{context.favorites.length}</span>
+                    <span className={`${classes["count"]}`}>
+                        ({context.favorites.length})
+                    </span>
                 </li>
             </ul>
         </nav>

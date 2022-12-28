@@ -12,6 +12,7 @@ export const Favorites = () => {
                 return (
                     <FavoriteItem
                         key={favorite.id}
+                        id={favorite.id}
                         title={favorite.title}
                         issue={favorite.issueNumber}
                         thumbnail={favorite.thumbnail}

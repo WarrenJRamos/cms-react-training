@@ -1,6 +1,7 @@
 .item {
     display: flex;
     flex-direction: row;
+    gap: 10px;
 }
 
 .item__thumbnail {
@@ -8,16 +9,17 @@
 }
 
 .item__remove {
-    padding: 2px 3px;
+    padding: 0 5px;
     border-radius: 50%;
     position: absolute;
     left: -10px;
     top: -10px;
+    border: none;
 }
 
-.item__remove-icon {
+.item__remove > svg {
     width: 6px;
-    height: 8px;
+    color: #C24868;
 }
 
 .item__content {

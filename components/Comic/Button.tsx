@@ -22,7 +22,10 @@ export const Button = ({
         console.log(`Adding ${comicData.id} to favorites`);
         context.setFavorites((prevFavorites) => {
             const newFavorites = [...prevFavorites, { ...comicData }];
-            localStorage.setItem("favorite_comics", JSON.stringify(newFavorites));
+            localStorage.setItem(
+                "favorite_comics",
+                JSON.stringify(newFavorites)
+            );
             return newFavorites;
         });
     };
@@ -35,14 +38,19 @@ export const Button = ({
                 return favorite.id === comicData.id;
             });
             newFavorites.splice(index, 1);
-            localStorage.setItem("favorite_comics", JSON.stringify(newFavorites));
+            localStorage.setItem(
+                "favorite_comics",
+                JSON.stringify(newFavorites)
+            );
             return newFavorites;
         });
     };
 
     return (
         <button
-            className={`${classes["button"]}`}
+            className={`${classes["button"]} ${
+                alreadyInFavorites && classes["favorited"]
+            }`}
             onClick={alreadyInFavorites ? removeFromFavorites : addToFavorites}
             disabled={disableButton && !alreadyInFavorites}
         >
