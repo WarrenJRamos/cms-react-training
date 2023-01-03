@@ -1,21 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
-import classes from "../../styles/Button.module.css";
+import classes from "../../styles/FavoritesButton.module.css";
 import Context from "../../context/index-store";
 import { ComicData } from "../../types/shared_types";
 
-type ButtonProps = {
+type FavoritesButtonProps = {
     comicData: ComicData;
     alreadyInFavorites: ComicData;
     disableButton: boolean;
 };
 
-export const Button = ({
+export const FavoritesButton = ({
     comicData,
     alreadyInFavorites,
     disableButton,
-}: ButtonProps) => {
+}: FavoritesButtonProps) => {
     const context = useContext(Context);
 
     const addToFavorites = () => {

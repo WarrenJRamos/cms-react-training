@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useContext } from "react";
-import { Button } from "./Button";
+import { FavoritesButton } from "./FavoritesButton";
 import { Detail } from "./Detail";
 import classes from "../../styles/Comic.module.css";
 import { ComicData } from "../../types/shared_types";
@@ -31,7 +31,7 @@ export const Comic = ({ comicData }: ComicDataProps) => {
                     width={183}
                     height={276}
                 />
-                <Button
+                <FavoritesButton
                     comicData={comicData}
                     alreadyInFavorites={alreadyInFavorites}
                     disableButton={favoriteLimitHasBeenReached}
