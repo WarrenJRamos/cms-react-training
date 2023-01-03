@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "../Pagination";
 import { Comic } from "./Comic";
-import classes from "../../styles/ComicList.module.css";
+import classes from "../../styles/Comics/ComicList.module.css";
 
 export const ComicList = ({ comics }) => {
     const [currentPage, setCurrentPage] = useState<number>(1);

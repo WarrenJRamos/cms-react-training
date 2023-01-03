@@ -1,11 +1,10 @@
-import Image from "next/image";
 import React, { useContext } from "react";
-import { Favorites } from "./Favorites";
-import logo from "../public/logo.png";
-import classes from "../styles/Header.module.css";
+import Image from "next/image";
+import logo from "../../public/logo.png";
+import classes from "../../styles/Header/Header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
-import Context from "../context/index-store";
+import Context from "../../context/index-store";
 
 export const Header = () => {
     const context = useContext(Context);

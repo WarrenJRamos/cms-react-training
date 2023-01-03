@@ -1,16 +1,15 @@
 import Head from "next/head";
 import classes from "../styles/Home.module.css";
-import { Comic } from "../components/Comic/Comic";
 import useRequest from "../hooks/use-request";
 import { useEffect, useState } from "react";
 import { ComicData } from "../types/shared_types";
 import { Filter } from "../components/Filter";
 import Context from "../context/index-store";
-import { Header } from "../components/Header";
-import { ComicList } from "../components/Comic/ComicList";
-import { Footer } from "../components/Footer";
+import { Header } from "../components/Header/Header";
+import { ComicList } from "../components/Comics/ComicList";
+import { Footer } from "../components/Footer/Footer";
 import { Hero } from "../components/Hero";
-import { Favorites } from "../components/Favorites";
+import { Favorites } from "../components/Favorites/Favorites";
 
 export default function Home() {
     const {

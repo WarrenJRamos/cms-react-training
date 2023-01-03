@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "../../styles/Detail.module.css";
+import classes from "../../styles/Comics/Detail.module.css";
 import { Creator, CreatorItem } from "../../types/shared_types";
 import { getCreators, getDate } from "./detail-utilities";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import logo from "../public/logo.png";
-import classes from "../styles/Footer.module.css";
+import logo from "../../public/logo.png";
+import classes from "../../styles/Footer/Footer.module.css";
 
 export const Footer = () => {
     return (

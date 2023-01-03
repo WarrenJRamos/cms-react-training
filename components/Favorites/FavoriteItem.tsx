@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { useContext } from "react";
-import Context from "../context/index-store";
-import classes from "../styles/FavoriteItem.module.css";
+import Context from "../../context/index-store";
+import classes from "../../styles/Favorites/FavoriteItem.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
     const context = useContext(Context);

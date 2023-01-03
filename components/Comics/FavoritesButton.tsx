@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
-import classes from "../../styles/FavoritesButton.module.css";
+import classes from "../../styles/Comics/FavoritesButton.module.css";
 import Context from "../../context/index-store";
 import { ComicData } from "../../types/shared_types";
 
