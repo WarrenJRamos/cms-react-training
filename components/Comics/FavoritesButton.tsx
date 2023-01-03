@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
 import classes from "../../styles/Comics/FavoritesButton.module.css";
 import Context from "../../context/index-store";
@@ -55,7 +55,7 @@ export const FavoritesButton = ({
             disabled={disableButton && !alreadyInFavorites}
         >
             <FontAwesomeIcon
-                icon={faBolt}
+                icon={faBoltLightning}
                 className={`${classes["bolt"]} ${
                     alreadyInFavorites && classes["favorited"]
                 }`}

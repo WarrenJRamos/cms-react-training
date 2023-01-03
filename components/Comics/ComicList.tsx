@@ -7,10 +7,10 @@ export const ComicList = ({ comics }) => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(15);
 
-    // Reset to page 1 when the user changes page
+    // Reset to page 1 when the user changes page or when the filter is changed
     useEffect(() => {
         setCurrentPage(1);
-    }, []);
+    }, [comics]);
 
     // Get current comics
     const indexOfLastComic = currentPage * productsPerPage;
@@ -25,10 +25,6 @@ export const ComicList = ({ comics }) => {
         Page: ${currentPage}
         Length of Current Comics: ${currentComics.length}
     `);
-    // if (indexOfLastComic > comics.length) {
-    //     indexOfLastComic =
-    //         indexOfLastComic - indexOfFirstComic + currentComics.length;
-    // }
 
     return (
         <div className={`${classes["container"]}`}>
@@ -40,12 +36,7 @@ export const ComicList = ({ comics }) => {
             <Pagination
                 range={{
                     start: indexOfFirstComic,
-                    end:
-                        indexOfLastComic > comics.length
-                            ? indexOfLastComic -
-                              indexOfFirstComic +
-                              currentComics.length
-                            : indexOfLastComic,
+                    end: indexOfLastComic
                 }}
                 totalNumberOfComics={comics.length}
                 totalNumberOfCurrentComics={currentComics.length}

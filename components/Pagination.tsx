@@ -28,9 +28,19 @@ export const Pagination = ({
     const disableLeftChevron = currentPage !== 1;
     const disableRightChevron = disableRightPagination;
 
+    console.log(`
+    range.start ${range.start}
+    range.end ${range.end}
+    `)
+
+    let start = range.start + 1;
+    if (totalNumberOfComics === 0) {
+        start = 0;
+    }
+
     let end = range.end;
     if (range.end > totalNumberOfComics) {
-        end = range.end - totalNumberOfComics;
+        end = totalNumberOfComics;
     }
 
     return (
@@ -43,7 +53,7 @@ export const Pagination = ({
                 <FontAwesomeIcon icon={faChevronLeft} />
             </button>
             <span>
-                {range.start}-{end}
+                {start}-{end}
                 &nbsp;of {totalNumberOfComics}
             </span>
             <button
