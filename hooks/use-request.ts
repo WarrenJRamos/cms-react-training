@@ -5,13 +5,13 @@ type getMarvelComicsResourceUrlFn = (endpoint: string) => string;
 type GenericObject = { [key: string]: any };
 
 type RequestConfig = {
-    endpoint: string,
-    method?: string,
+    endpoint: string;
+    method?: string;
     headers?: {
-        "Content-Type"?: string,
-    },
-    body?: GenericObject,
-}
+        "Content-Type"?: string;
+    };
+    body?: GenericObject;
+};
 
 type fetchDataFn = (requestConfig: RequestConfig) => Promise<GenericObject>;
 
@@ -20,7 +20,9 @@ const useRequest = () => {
     const [isSuccess, setIsSuccess] = useState<boolean>(false);
     const [hasError, setHasError] = useState<boolean>(false);
 
-    const getMarvelComicsResourceUrl: getMarvelComicsResourceUrlFn = (endpoint) => {
+    const getMarvelComicsResourceUrl: getMarvelComicsResourceUrlFn = (
+        endpoint
+    ) => {
         const serviceEndpoint = endpoint;
         let timestamp = new Date().getTime();
         timestamp = 1669230418424;
@@ -34,7 +36,7 @@ const useRequest = () => {
         return requestUrl;
     };
 
-    const fetchData: fetchDataFn = async (requestConfig) => { 
+    const fetchData: fetchDataFn = async (requestConfig) => {
         try {
             console.log("Fetching Data");
             setIsLoading(true);
@@ -54,7 +56,7 @@ const useRequest = () => {
             const responseData = await response.json();
             console.log("Data Retrieved");
             return responseData;
-        } catch(error) {
+        } catch (error) {
             console.log(error);
             console.log("Inside error");
             setHasError(true);
@@ -69,7 +71,7 @@ const useRequest = () => {
         isSuccess,
         setIsSuccess,
         hasError,
-        setHasError
+        setHasError,
     };
 };
 

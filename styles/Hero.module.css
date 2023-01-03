@@ -9,8 +9,10 @@
 }
 
 .hero::before {
-    content: '';
-    background: transparent linear-gradient(180deg, #000000B3 0%, #00000000 100%) 0% 0% no-repeat padding-box;
+    content: "";
+    background: transparent
+        linear-gradient(180deg, #000000b3 0%, #00000000 100%) 0% 0% no-repeat
+        padding-box;
     position: absolute;
     top: 0;
     width: 100%;
@@ -18,7 +20,7 @@
 }
 
 .hero::after {
-    content: '';
+    content: "";
     background: red;
     background: url("../public/halftone.png");
     width: 100%;
@@ -28,7 +30,7 @@
 }
 
 .hero__header {
-    background-color: #C24868E6;
+    background-color: #c24868e6;
     width: 572px;
     height: 148px;
     padding: 37px 69px;
@@ -40,6 +42,6 @@
 .hero__header-text {
     font-weight: 900;
     font-size: 61px;
-    color: #F8F8F2;
+    color: #f8f8f2;
     text-shadow: 3px 3px 0px #000000;
 }

@@ -8,6 +8,6 @@ interface AppContextInterface {
     setFavorites: React.Dispatch<React.SetStateAction<ComicData[]>>;
 }
 
-const Context = createContext<AppContextInterface | null>(null)
+const Context = createContext<AppContextInterface | null>(null);
 
 export default Context;

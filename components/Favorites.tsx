@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Context from "../context/index-store";
 import { FavoriteItem } from "./FavoriteItem";
-import classes from "../styles/Favorites.module.css"
+import classes from "../styles/Favorites.module.css";
 
 export const Favorites = () => {
     const context = useContext(Context);

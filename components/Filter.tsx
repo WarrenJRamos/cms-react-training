@@ -1,7 +1,12 @@
-import React, { ChangeEventHandler, useContext, useEffect, useState } from "react";
+import React, {
+    ChangeEventHandler,
+    useContext,
+    useEffect,
+    useState,
+} from "react";
 import Context from "../context/index-store";
 import useRequest from "../hooks/use-request";
-import classes from "../styles/Filter.module.css"
+import classes from "../styles/Filter.module.css";
 
 const characterFilterOptions = [
     { value: "", text: "Character" },
@@ -89,7 +94,11 @@ export const Filter = () => {
     };
 
     const fetchDefaultComics = () => {
-        fetchData({ endpoint: getMarvelComicsResourceUrl("https://gateway.marvel.com/v1/public/comics?") })
+        fetchData({
+            endpoint: getMarvelComicsResourceUrl(
+                "https://gateway.marvel.com/v1/public/comics?"
+            ),
+        })
             .then((data) => {
                 console.log(data);
                 context.setComics(data.data.results);
@@ -101,7 +110,7 @@ export const Filter = () => {
                 setIsSuccess(false);
                 setIsLoading(false);
             });
-    }
+    };
 
     // Since useEffect always runs for the first time the component mounts, no matter the
     // dependency array, I have a didMount state to only check the filter select values
@@ -132,7 +141,11 @@ export const Filter = () => {
     return (
         <div className={`${classes["filter"]}`}>
             Filter by:
-            <select value={selectedCharacter} onChange={onCharacterChange} className={`${classes["filter__dropdown"]}`}>
+            <select
+                value={selectedCharacter}
+                onChange={onCharacterChange}
+                className={`${classes["filter__dropdown"]}`}
+            >
                 {characterFilterOptions.map((charOption) => {
                     return (
                         <option value={charOption.value} key={charOption.value}>
@@ -141,7 +154,11 @@ export const Filter = () => {
                     );
                 })}
             </select>
-            <select value={selectedCreator} onChange={onCreatorChange} className={`${classes["filter__dropdown"]}`}>
+            <select
+                value={selectedCreator}
+                onChange={onCreatorChange}
+                className={`${classes["filter__dropdown"]}`}
+            >
                 {creatorFilterOptions.map((creatorOption) => {
                     return (
                         <option

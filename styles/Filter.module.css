@@ -1,7 +1,7 @@
 .filter {
     background: #222222 0% 0% no-repeat padding-box;
     padding: 21px 20px;
-    color: #F8F8F2;
+    color: #f8f8f2;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -11,10 +11,10 @@
 }
 
 .filter__dropdown {
-    border: 1px solid #8D8D8D;
+    border: 1px solid #8d8d8d;
     border-radius: 3px;
     background: inherit;
-    color: #F8F8F2;
+    color: #f8f8f2;
     padding: 7px 10px;
     width: 245px;
 }

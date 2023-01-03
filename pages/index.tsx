@@ -89,11 +89,11 @@ export default function Home() {
                                 </span>
                             </h2>
                             <p className={`${classes["section__body"]}`}>
-                                Sed posuere consectetur est at lobortis. Nulla vitae
-                                elit libero, a pharetra augue. Cum sociis natoque
-                                penatibus et magnis dis parturient montes, nascetur
-                                ridiculus mus. Nullam id dolor id nibh ultricies
-                                vehicula ut id elit.
+                                Sed posuere consectetur est at lobortis. Nulla
+                                vitae elit libero, a pharetra augue. Cum sociis
+                                natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Nullam id dolor
+                                id nibh ultricies vehicula ut id elit.
                             </p>
                         </div>
                         {isLoading && (

@@ -7,8 +7,8 @@ import { ComicData } from "../../types/shared_types";
 import Context from "../../context/index-store";
 
 type ComicDataProps = {
-    comicData: ComicData
-}
+    comicData: ComicData;
+};
 
 export const Comic = ({ comicData }: ComicDataProps) => {
     const context = useContext(Context);
@@ -17,25 +17,27 @@ export const Comic = ({ comicData }: ComicDataProps) => {
         return null;
     }
 
-    const alreadyInFavorites = context.favorites.find(favorite => favorite.id === comicData.id);
+    const alreadyInFavorites = context.favorites.find(
+        (favorite) => favorite.id === comicData.id
+    );
     const favoriteLimitHasBeenReached = context.favorites.length >= 10;
 
     return (
         <div className={classes["comic"]} data-testid="comic">
-            <div
-                className={`${classes["thumbnail-container"]}`}
-            >
+            <div className={`${classes["thumbnail-container"]}`}>
                 <Image
                     src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
                     alt={comicData.title}
                     width={183}
                     height={276}
                 />
-                <Button comicData={comicData} alreadyInFavorites={alreadyInFavorites} disableButton={favoriteLimitHasBeenReached}/>
+                <Button
+                    comicData={comicData}
+                    alreadyInFavorites={alreadyInFavorites}
+                    disableButton={favoriteLimitHasBeenReached}
+                />
             </div>
-            <div
-                className={`${classes["comic-body"]}`}
-            >
+            <div className={`${classes["comic-body"]}`}>
                 <h3 data-testid="title">{comicData.title}</h3>
                 <Detail
                     issueNumber={comicData.issueNumber}
