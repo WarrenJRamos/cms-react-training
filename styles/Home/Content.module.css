@@ -23,3 +23,9 @@
     flex-grow: 0;
     flex-basis: 265px;
 }
+
+@media screen and (max-width: 600px) {
+    .body__right {
+        display: none;
+    }
+}

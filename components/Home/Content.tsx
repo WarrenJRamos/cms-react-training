@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import Context from "../../context/index-store";
 import classes from "../../styles/Home/Content.module.css";
 import { ComicsGrid } from "../Comics/ComicsGrid";
+import { ErrorMessage } from "../Comics/ErrorMessage";
+import { LoadingMessage } from "../Comics/LoadingMessage";
 import { Favorites } from "../Favorites/Favorites";
-import { Filter } from "../Filter";
+import { Filter } from "./Filter";
 import { IntroTextBox } from "./IntroTextBox";
 
 export const Content = () => {
@@ -14,17 +16,10 @@ export const Content = () => {
             <div className={`${classes["body"]}`}>
                 <div className={`${classes["body__left"]}`}>
                     <Filter />
-                    {context.isLoading && (
-                        <h1 data-testid="loading">Loading comics...</h1>
-                    )}
-                    {context.hasError && (
-                        <p>
-                            Something went wrong. Unable to retrieve comics.
-                            {context.hasError}
-                        </p>
-                    )}
+                    {context.isLoading && <LoadingMessage />}
+                    {context.hasError && <ErrorMessage />}
                     {!context.isLoading && !context.hasError && context.isSuccess && (
-                        <ComicsGrid comics={context.comics} />
+                        <ComicsGrid />
                     )}
                 </div>
                 <div className={`${classes["body__right"]}`}>

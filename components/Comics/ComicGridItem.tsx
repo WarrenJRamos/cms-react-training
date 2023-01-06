@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useContext } from "react";
 import { FavoritesButton } from "./FavoritesButton";
 import { Detail } from "./Detail";
-import classes from "../../styles/Comics/Comic.module.css";
+import classes from "../../styles/Comics/ComicGridItem.module.css";
 import { ComicData } from "../../types/shared_types";
 import Context from "../../context/index-store";
 

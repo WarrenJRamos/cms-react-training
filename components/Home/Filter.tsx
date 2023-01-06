@@ -4,9 +4,9 @@ import React, {
     useEffect,
     useState,
 } from "react";
-import Context from "../context/index-store";
-import useRequest from "../hooks/use-request";
-import classes from "../styles/Filter.module.css";
+import Context from "../../context/index-store";
+import useRequest from "../../hooks/use-request";
+import classes from "../../styles/Filter.module.css";
 
 const characterFilterOptions = [
     { value: "", text: "Character" },

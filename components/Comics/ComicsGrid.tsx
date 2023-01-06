@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Pagination } from "../Pagination";
+import React, { useContext, useEffect, useState } from "react";
+import { Pagination } from "./Pagination";
 import { ComicGridItem } from "./ComicGridItem";
-import classes from "../../styles/Comics/ComicList.module.css";
+import classes from "../../styles/Comics/ComicsGrid.module.css";
+import Context from "../../context/index-store";
 
-export const ComicsGrid = ({ comics }) => {
+export const ComicsGrid = () => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(15);
+    const context = useContext(Context);
+    const comics = context.comics;
 
     // Reset to page 1 when the user changes page or when the filter is changed
     useEffect(() => {
