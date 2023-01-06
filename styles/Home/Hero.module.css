@@ -1,5 +1,5 @@
 .hero {
-    background: url("../public/heroPhoto.png");
+    background: url("../../public/heroPhoto.png");
     background-position: center;
     background-size: cover;
     height: 450px;
@@ -29,7 +29,7 @@
 .hero::after {
     content: "";
     background: red;
-    background: url("../public/halftone.png");
+    background: url("../../public/halftone.png");
     width: 100%;
     height: 176px;
     position: absolute;

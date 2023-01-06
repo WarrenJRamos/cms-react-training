@@ -4,7 +4,7 @@ import {
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import classes from "../../styles/Pagination.module.css";
+import classes from "../../styles/Comics/Pagination.module.css";
 
 export const Pagination = ({
     range,
