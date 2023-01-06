@@ -1,15 +1,10 @@
 import Head from "next/head";
-import classes from "../styles/Home.module.css";
-import useRequest from "../hooks/use-request";
 import { useEffect, useState } from "react";
-import { ComicData } from "../types/shared_types";
-import { Filter } from "../components/Filter";
+import { Layout } from "../components/Home/Layout";
 import Context from "../context/index-store";
-import { Header } from "../components/Header/Header";
-import { ComicList } from "../components/Comics/ComicList";
-import { Footer } from "../components/Footer/Footer";
-import { Hero } from "../components/Hero";
-import { Favorites } from "../components/Favorites/Favorites";
+import useRequest from "../hooks/use-request";
+import classes from "../styles/Home.module.css";
+import { ComicData } from "../types/shared_types";
 
 export default function Home() {
     const {
@@ -51,13 +46,19 @@ export default function Home() {
             });
     }, []);
 
+    // remove loading, success, hasError from context
     const ctx = {
         comics,
         setComics,
         favorites,
         setFavorites,
+        isLoading,
+        setIsLoading,
+        isSuccess,
+        setIsSuccess,
+        hasError,
+        setHasError,
     };
-
     return (
         <div>
             <Head>
@@ -69,56 +70,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Context.Provider value={ctx}>
-                <Header />
-                <main className={`${classes["main"]}`}>
-                    <Hero />
-                    <div className={`${classes["main__content"]}`}>
-                        <div className={`${classes["section"]}`}>
-                            <h2 className={`${classes["section__header"]}`}>
-                                <span
-                                    className={`${classes["section__header-badge"]}`}
-                                >
-                                    New Comics!
-                                </span>
-                                <span
-                                    className={`${classes["section__header-title"]}`}
-                                >
-                                    Coming Out Daily
-                                </span>
-                            </h2>
-                            <p className={`${classes["section__body"]}`}>
-                                Sed posuere consectetur est at lobortis. Nulla
-                                vitae elit libero, a pharetra augue. Cum sociis
-                                natoque penatibus et magnis dis parturient
-                                montes, nascetur ridiculus mus. Nullam id dolor
-                                id nibh ultricies vehicula ut id elit.
-                            </p>
-                        </div>
-                        {isLoading && (
-                            <h1 data-testid="loading">Loading comics...</h1>
-                        )}
-                        {hasError && (
-                            <p>
-                                Something went wrong. Unable to retrieve comics.
-                                {hasError}
-                            </p>
-                        )}
-                        {!isLoading && !hasError && isSuccess && (
-                            <div className={`${classes["body"]}`}>
-                                <div className={`${classes["body__left"]}`}>
-                                    <Filter />
-                                    <ComicList comics={comics} />
-                                </div>
-                                <div className={`${classes["body__right"]}`}>
-                                    <Favorites />
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </main>
-                <Footer />
-            </Context.Provider>
+            <main className={`${classes["main"]}`}>
+                <Context.Provider value={ctx}>
+                    <Layout />
+                </Context.Provider>
+            </main>
         </div>
     );
 }

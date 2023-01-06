@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "../Pagination";
-import { Comic } from "./Comic";
+import { ComicGridItem } from "./ComicGridItem";
 import classes from "../../styles/Comics/ComicList.module.css";
 
-export const ComicList = ({ comics }) => {
+export const ComicsGrid = ({ comics }) => {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [productsPerPage] = useState<number>(15);
 
@@ -30,7 +30,7 @@ export const ComicList = ({ comics }) => {
         <div className={`${classes["container"]}`}>
             <div className={`${classes["grid"]}`}>
                 {currentComics.map((comic) => {
-                    return <Comic key={comic.id} comicData={comic} />;
+                    return <ComicGridItem key={comic.id} comicData={comic} />;
                 })}
             </div>
             <Pagination

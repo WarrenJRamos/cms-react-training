@@ -8,34 +8,3 @@
     position: absolute;
     z-index: 20;
 }
-
-.nav__logo {
-}
-
-.nav__list {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    color: #f8f8f2;
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 38px;
-}
-
-.nav__list-item {
-}
-
-.nav__list-item:last-of-type {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
-
-.nav__list-item .count {
-    opacity: 0.6;
-}
-
-.bolt {
-    width: 11px;
-}

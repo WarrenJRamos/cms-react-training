@@ -6,11 +6,11 @@ import classes from "../../styles/Comics/Comic.module.css";
 import { ComicData } from "../../types/shared_types";
 import Context from "../../context/index-store";
 
-type ComicDataProps = {
+type ComicGridItemProps = {
     comicData: ComicData;
 };
 
-export const Comic = ({ comicData }: ComicDataProps) => {
+export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
     const context = useContext(Context);
 
     if (!comicData) {

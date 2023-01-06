@@ -1,0 +1,57 @@
+.menu {
+    list-style: none;
+    display: none;
+    flex-direction: row;
+    gap: 30px;
+    color: #f8f8f2;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 38px;
+}
+
+@media screen and (max-width: 375px) {
+    .menu {
+        display: flex;
+    }
+}
+
+.menu .menu-item {
+    position: relative;
+}
+
+.menu .menu-item:last-of-type {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.menu-item .count {
+    opacity: 0.6;
+}
+
+.bolt {
+    width: 11px;
+}
+
+
+.menu-item .hamburger {
+    width: 18px;
+    height: 21px;
+    background-color: red;
+}
+
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 22px;
+    right: 0;
+    background-color: rgba(20,20,20,0.9);
+    list-style: none;
+    padding: 20px;
+}
+
+.hamburger-menu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

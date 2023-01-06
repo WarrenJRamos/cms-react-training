@@ -1,0 +1,27 @@
+.header {
+    position: relative;
+}
+
+.header__badge {
+    position: absolute;
+    top: -55px;
+    left: -30px;
+    background: #9ecfc5 0% 0% no-repeat padding-box;
+    transform: rotate(-3deg);
+    padding: 9px 15px;
+    color: #f8f8f2;
+    text-shadow: 2px 2px 0px #222222;
+}
+
+.header__title {
+    position: relative;
+    z-index: 2;
+    color: #c24868;
+    font-size: 49px;
+    line-height: 16px;
+}
+
+.body {
+    font-size: 20px;
+    line-height: 32px;
+}

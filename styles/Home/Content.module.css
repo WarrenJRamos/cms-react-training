@@ -1,0 +1,25 @@
+.content {
+    max-width: 1320px;
+    margin: auto;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+}
+
+/* @media screen and (max-width: 375px) {
+    .body {
+        flex-direction: column;
+    }
+} */
+
+.body__left {
+    flex-basis: 995px;
+}
+
+.body__right {
+    flex-grow: 0;
+    flex-basis: 265px;
+}
