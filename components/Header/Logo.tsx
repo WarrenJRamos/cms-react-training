@@ -5,7 +5,7 @@ import logo from "../../public/logo.png";
 
 export const Logo = () => {
   return (
-    <div className={`${classes["nav__logo"]}`}>
+    <div className={`${classes["logo"]}`}>
         <Image src={logo} alt="Logo" />
     </div>
   )

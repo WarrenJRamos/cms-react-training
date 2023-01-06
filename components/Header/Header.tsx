@@ -14,11 +14,11 @@ export const Header = () => {
     return (
         <nav className={`${classes["nav"]}`}>
             <Logo />
-            <Menu />
             <MobileMenu
                 onHamburgerMenuClick={onHamburgerMenuClick}
                 isHamburgerMenuOpen={isHamburgerMenuOpen}
             />
+            <Menu />
         </nav>
     );
 };

@@ -1,16 +1,18 @@
 .menu {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    color: #f8f8f2;
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 38px;
+    display: none;
 }
 
-.menu.mobile {
-    /* display: none; */
+@media screen and (min-width: 769px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding-top: 38px;
+        list-style: none;
+    }
 }
 
 .menu .menu-item {
@@ -18,15 +20,22 @@
 }
 
 .menu .menu-item:last-of-type {
-    /* display: flex;
-    flex-direction: row;
-    gap: 5px; */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 22px;
 }
 
-.menu-item .count {
+.menu .menu-item .bolt {
+    flex-basis: 11px;
+    height: 18px;
+}
+
+.menu .menu-item .bolt svg {
+    width: 100%;
+    height: 100%;
+}
+
+.menu .menu-item .count {
     opacity: 0.6;
-}
-
-.bolt {
-    width: 11px;
 }

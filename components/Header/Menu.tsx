@@ -11,10 +11,9 @@ export const Menu = () => {
             <li className={`${classes["menu-item"]}`}>Home</li>
             <li className={`${classes["menu-item"]}`}>Shop</li>
             <li className={`${classes["menu-item"]}`}>
-                <span>
+                <span className={`${classes["bolt"]}`}>
                     <FontAwesomeIcon
                         icon={faBoltLightning}
-                        className={`${classes["bolt"]}`}
                     />
                 </span>
                 <span>My Favorites</span>

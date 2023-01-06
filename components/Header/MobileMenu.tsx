@@ -9,10 +9,9 @@ export const MobileMenu = ({onHamburgerMenuClick, isHamburgerMenuOpen}) => {
     return (
         <ul className={`${classes["menu"]}`}>
             <li className={`${classes["menu-item"]}`}>
-                <span>
+                <span className={`${classes["bolt"]}`}>
                     <FontAwesomeIcon
                         icon={faBoltLightning}
-                        className={`${classes["bolt"]}`}
                     />
                 </span>
                 <span className={`${classes["count"]}`}>
@@ -20,10 +19,10 @@ export const MobileMenu = ({onHamburgerMenuClick, isHamburgerMenuOpen}) => {
                 </span>
             </li>
             <li className={`${classes["menu-item"]}`}>
-                <button onClick={onHamburgerMenuClick}>
+                <button onClick={onHamburgerMenuClick} className={`${classes["hamburger-button"]}`}>
                     <FontAwesomeIcon
                         icon={faBars}
-                        className={`${classes["hamburger"]}`}
+                        className={`${classes["hamburger-icon"]}`}
                     />
                 </button>
                 <ul

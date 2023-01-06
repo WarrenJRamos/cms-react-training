@@ -1,22 +1,57 @@
 .menu {
     list-style: none;
-    display: none;
+    display: flex;
     flex-direction: row;
-    gap: 30px;
+    align-items: center;
+    gap: 16px;
     color: #f8f8f2;
     font-size: 18px;
     font-weight: bold;
-    padding-top: 38px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 481px) {
     .menu {
-        display: flex;
+        align-items: normal;
+        padding-top: 26px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .menu {
+        display: none;
     }
 }
 
 .menu .menu-item {
     position: relative;
+}
+
+.menu .menu-item:first-of-type {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 38px;
+    height: 22px;
+}
+
+@media screen and (min-width: 481px) {
+    .menu .menu-item:first-of-type {
+        padding-top: 17px;
+    }
+}
+
+.menu .menu-item .bolt {
+    flex-basis: 11px;
+    height: 18px;
+}
+
+.menu .menu-item .bolt svg {
+    width: 100%;
+    height: 100%;
+}
+
+.menu .menu-item .count {
+    opacity: 0.6;
 }
 
 .menu .menu-item:last-of-type {
@@ -25,32 +60,34 @@
     gap: 5px;
 }
 
-.menu-item .count {
-    opacity: 0.6;
+.menu .menu-item .hamburger-button {
+    width: 55px;
+    height: 43px;
+    padding: 10px 16px;
+    border: 2px solid #f8f8f2;
+    border-radius: 5px;
+    background: inherit;
 }
 
-.bolt {
-    width: 11px;
-}
-
-
-.menu-item .hamburger {
+.menu .menu-item .hamburger-icon {
     width: 18px;
     height: 21px;
-    background-color: red;
+    color: white;
 }
 
-.hamburger-menu {
+.menu .menu-item .hamburger-menu {
     display: none;
     position: absolute;
-    top: 22px;
+    top: 43px;
     right: 0;
-    background-color: rgba(20,20,20,0.9);
-    list-style: none;
     padding: 20px;
+    background-color: rgba(20, 20, 20, 0.9);
+    border: 2px solid #f8f8f2;
+    border-radius: 5px;
+    list-style: none;
 }
 
-.hamburger-menu.open {
+.menu .menu-item .hamburger-menu.open {
     display: flex;
     flex-direction: column;
     gap: 20px;
