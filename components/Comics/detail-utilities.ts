@@ -6,7 +6,8 @@ type getDateFn = (publishDate: string) => string;
 
 export const getCreators: getCreatorsFn = (creators) => {
     const creatorsGroup = creators.items.map((creator) => {
-        return creator.name;
+        const lastName = creator.name.split(" ")[1];
+        return lastName;
     });
     const creatorsFormatted =
         creatorsGroup.length > 0 ? creatorsGroup.join(", ") : "N/A";
