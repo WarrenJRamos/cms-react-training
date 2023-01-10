@@ -1,8 +1,7 @@
 .button {
     position: absolute;
-    bottom: -15px;
-    left: 0;
-    right: 0;
+    top: 40%;
+    left: -11%;
     margin: 0 auto;
     width: 30px;
     height: 30px;
@@ -11,6 +10,15 @@
     background-color: #222222;
     border: 2px solid #222222;
     cursor: pointer;
+}
+
+@media screen and (min-width: 481px) {
+    .button {
+        top: unset;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+    }
 }
 
 .button.favorited {

@@ -3,29 +3,30 @@
     padding: 0 20px;
 }
 
-.body {
+.content .body {
     display: flex;
     flex-direction: row;
     gap: 60px;
 }
 
-/* @media screen and (max-width: 375px) {
-    .body {
-        flex-direction: column;
-    }
-} */
-
-.body__left {
+.content .body .body__left {
     flex-basis: 995px;
 }
 
-.body__right {
+.content .body .body__right {
+    display: none;
     flex-grow: 0;
     flex-basis: 265px;
 }
 
-@media screen and (max-width: 600px) {
-    .body__right {
-        display: none;
+/* @media screen and (min-width: 769px) {
+    .content .body .body__right {
+        display: block;
+    }
+} */
+
+@media screen and (min-width: 900px) {
+    .content .body .body__right {
+        display: block;
     }
 }

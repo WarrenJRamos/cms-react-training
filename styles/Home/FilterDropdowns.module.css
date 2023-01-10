@@ -1,0 +1,41 @@
+.desktop {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .desktop {
+        display: flex;
+    }
+}
+
+.dropdown {
+    border: 1px solid #8d8d8d;
+    border-radius: 3px;
+    color: #f8f8f2;
+    padding: 7px 10px;
+    width: 245px;
+    background-color: #222222;
+}
+
+.desktop .dropdown:first-of-type {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.mobile {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #222222;
+    z-index: 20;
+}
+
+@media screen and (min-width: 900px) {
+    .mobile {
+        display: none;
+    }
+}

@@ -1,15 +1,15 @@
 .grid {
     margin: 40px auto 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(183px, 1fr));
+    grid-template-columns: 100%;
     /* grid-template-columns: repeat(auto-fit, 183px); */
     row-gap: 60px;
     column-gap: 20px;
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 481px) {
     .grid {
-        grid-template-columns: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(183px, 1fr));
     }
 }

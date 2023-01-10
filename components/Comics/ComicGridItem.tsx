@@ -38,7 +38,7 @@ export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
                 />
             </div>
             <div className={`${classes["comic-body"]}`}>
-                <h3 data-testid="title">{comicData.title}</h3>
+                <h3 data-testid="title" className={`${classes["comic-body__title"]}`}>{comicData.title}</h3>
                 <Detail
                     issueNumber={comicData.issueNumber}
                     publishDate={comicData.dates[0].date}

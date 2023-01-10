@@ -23,7 +23,7 @@ export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
         });
     };
     return (
-        <div className={`${classes["item"]}`}>
+        <li className={`${classes["item"]}`}>
             <div className={`${classes["item__thumbnail"]}`}>
                 <Image
                     src={`${thumbnail.path}.${thumbnail.extension}`}
@@ -44,6 +44,6 @@ export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
                     Issue: <span>{issue}</span>
                 </p>
             </div>
-        </div>
+        </li>
     );
 };

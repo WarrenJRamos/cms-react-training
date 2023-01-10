@@ -1,3 +1,5 @@
+import { faBoltLightning, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, {
     ChangeEventHandler,
     useContext,
@@ -7,6 +9,8 @@ import React, {
 import Context from "../../context/index-store";
 import useRequest from "../../hooks/use-request";
 import classes from "../../styles/Home/Filter.module.css";
+import { Favorites } from "../Favorites/Favorites";
+import { FilterDropdowns } from "./FilterDropdowns";
 
 const characterFilterOptions = [
     { value: "", text: "Character" },
@@ -46,6 +50,8 @@ export const Filter = () => {
         creatorFilterOptions[0].value
     );
     const [didMount, setDidMount] = useState<boolean>(false);
+    const [showMobileFilter, setShowMobileFilter] = useState(false);
+    const [showMobileFavorites, setShowMobileFavorites] = useState(false);
     const context = useContext(Context);
 
     const onCharacterChange: ChangeEventHandler<HTMLSelectElement> = (
@@ -138,38 +144,66 @@ export const Filter = () => {
         }
     }, [selectedCharacter, selectedCreator]);
 
+    const mobileFilterClickHandler = () => {
+        setShowMobileFilter((prev) => !prev);
+    };
+
+    const mobileFavoritesClickHandler = () => {
+        setShowMobileFavorites((prev) => !prev);
+    };
+
     return (
         <div className={`${classes["filter"]}`}>
-            Filter by:
-            <select
-                value={selectedCharacter}
-                onChange={onCharacterChange}
-                className={`${classes["filter__dropdown"]}`}
+            <span className={`${classes["filter__header"]}`}>Filter by:</span>
+            <div
+                className={`${classes["filter__header"]} ${classes["filter__header--mobile"]}`}
             >
-                {characterFilterOptions.map((charOption) => {
-                    return (
-                        <option value={charOption.value} key={charOption.value}>
-                            {charOption.text}
-                        </option>
-                    );
-                })}
-            </select>
-            <select
-                value={selectedCreator}
-                onChange={onCreatorChange}
-                className={`${classes["filter__dropdown"]}`}
-            >
-                {creatorFilterOptions.map((creatorOption) => {
-                    return (
-                        <option
-                            value={creatorOption.value}
-                            key={creatorOption.value}
-                        >
-                            {creatorOption.text}
-                        </option>
-                    );
-                })}
-            </select>
+                <div>
+                    <button
+                        onClick={mobileFilterClickHandler}
+                        className={`${classes["filterButton"]}`}
+                    >
+                        <span>Filter</span>
+                        <FontAwesomeIcon icon={faFilter} />
+                    </button>
+                    {showMobileFilter && (
+                        <FilterDropdowns
+                            selectedCharacter={selectedCharacter}
+                            onCharacterChange={onCharacterChange}
+                            characterFilterOptions={characterFilterOptions}
+                            selectedCreator={selectedCreator}
+                            onCreatorChange={onCreatorChange}
+                            creatorFilterOptions={creatorFilterOptions}
+                            className="mobile"
+                        />
+                    )}
+                </div>
+                <div>
+                    <button
+                        className={`${classes["favorites-btn"]}`}
+                        onClick={mobileFavoritesClickHandler}
+                    >
+                        {!showMobileFavorites && <span>Show Favorites</span>}
+                        {showMobileFavorites && <span>Hide Favorites</span>}
+                        <FontAwesomeIcon icon={faBoltLightning} />
+                    </button>
+                    {showMobileFavorites && (
+                        <Favorites
+                            className="mobile"
+                            closeFavoritesHandler={mobileFavoritesClickHandler}
+                        />
+                    )}
+                </div>
+            </div>
+            <FilterDropdowns
+                selectedCharacter={selectedCharacter}
+                onCharacterChange={onCharacterChange}
+                characterFilterOptions={characterFilterOptions}
+                selectedCreator={selectedCreator}
+                onCreatorChange={onCreatorChange}
+                creatorFilterOptions={creatorFilterOptions}
+                className="desktop"
+            />
         </div>
     );
 };

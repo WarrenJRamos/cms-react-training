@@ -11,7 +11,7 @@ import { IntroTextBox } from "./IntroTextBox";
 export const Content = () => {
     const context = useContext(Context);
     return (
-        <div className={`${classes["content"]} ${classes["container"]}`}>
+        <div className={`${classes["content"]}`}>
             <IntroTextBox />
             <div className={`${classes["body"]}`}>
                 <div className={`${classes["body__left"]}`}>
@@ -23,7 +23,7 @@ export const Content = () => {
                     )}
                 </div>
                 <div className={`${classes["body__right"]}`}>
-                    <Favorites />
+                    <Favorites className="desktop" closeFavoritesHandler={null}/>
                 </div>
             </div>
         </div>
