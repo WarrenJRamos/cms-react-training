@@ -7,7 +7,7 @@
     margin-bottom: 90px;
     font-size: 18px;
     line-height: 16px;
-    font-family: Karla inherit;
+    font-family: var(--font-family-2);
 }
 
 .pagination__arrow {
