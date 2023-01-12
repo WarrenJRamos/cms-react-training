@@ -16,7 +16,7 @@
     }
 }
 
-.footer__info {
+.footer .footer__info {
     margin-top: 26px;
     margin-bottom: 16px;
     display: flex;
@@ -25,10 +25,10 @@
     gap: 3px;
 }
 
-.footer__info-item {
+.footer .footer__info-item {
     text-decoration: underline;
 }
 
-.footer__copyright {
+.footer .footer__copyright {
     text-align: center;
 }
