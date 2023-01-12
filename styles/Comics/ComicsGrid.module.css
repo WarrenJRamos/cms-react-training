@@ -2,7 +2,7 @@
     margin: 40px auto 0;
     display: grid;
     grid-template-columns: 100%;
-    row-gap: 60px;
+    row-gap: 30px;
     column-gap: 20px;
     width: 100%;
 }
@@ -10,5 +10,11 @@
 @media screen and (min-width: 481px) {
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(183px, 1fr));
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .grid {
+        row-gap: 60px;
     }
 }
