@@ -1,18 +1,27 @@
-import { faBoltLightning, faFilter } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, {
     ChangeEventHandler,
     useContext,
     useEffect,
     useState,
 } from "react";
-import Context from "../../context/index-store";
-import useRequest from "../../hooks/use-request";
 import classes from "../../styles/Home/Filter.module.css";
+import Context from "../../context/index-store";
+import { faBoltLightning, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useRequest from "../../hooks/use-request";
 import { Favorites } from "../Favorites/Favorites";
 import { FilterDropdowns } from "./FilterDropdowns";
 
-const characterFilterOptions = [
+type filterOptionsType = {
+    value: string;
+    text: string;
+}[];
+
+type fetchDataFn = () => void;
+
+type filterClickHandlerFn = () => void;
+
+const characterFilterOptions: filterOptionsType = [
     { value: "", text: "Character" },
     { value: "1009368", text: "Iron Man" },
     { value: "1009220", text: "Captain America" },
@@ -24,7 +33,7 @@ const characterFilterOptions = [
     { value: "1010763", text: "Gamora" },
 ];
 
-const creatorFilterOptions = [
+const creatorFilterOptions: filterOptionsType = [
     { value: "", text: "Creator" },
     { value: "12787", text: "Kate Leth" },
     { value: "24", text: "Brian Michael Bendis" },
@@ -32,6 +41,7 @@ const creatorFilterOptions = [
     { value: "32", text: "Steve Ditko" },
     { value: "196", text: "Jack Kirby" },
 ];
+
 export const Filter = () => {
     const {
         getMarvelComicsResourceUrl,
@@ -43,6 +53,7 @@ export const Filter = () => {
         hasError,
         setHasError,
     } = useRequest();
+    const context = useContext(Context);
     const [selectedCharacter, setSelectedCharacter] = useState<string>(
         characterFilterOptions[0].value
     );
@@ -50,9 +61,8 @@ export const Filter = () => {
         creatorFilterOptions[0].value
     );
     const [didMount, setDidMount] = useState<boolean>(false);
-    const [showMobileFilter, setShowMobileFilter] = useState(false);
-    const [showMobileFavorites, setShowMobileFavorites] = useState(false);
-    const context = useContext(Context);
+    const [showMobileFilter, setShowMobileFilter] = useState<boolean>(false);
+    const [showMobileFavorites, setShowMobileFavorites] = useState<boolean>(false);
 
     const onCharacterChange: ChangeEventHandler<HTMLSelectElement> = (
         event
@@ -66,7 +76,7 @@ export const Filter = () => {
         setSelectedCreator(event.target.value);
     };
 
-    const fetchFilteredComics = () => {
+    const fetchFilteredComics: fetchDataFn = () => {
         let path: string;
         if (selectedCharacter && selectedCreator) {
             console.log("Character and Creator Selected");
@@ -99,7 +109,7 @@ export const Filter = () => {
             });
     };
 
-    const fetchDefaultComics = () => {
+    const fetchDefaultComics: fetchDataFn = () => {
         fetchData({
             endpoint: getMarvelComicsResourceUrl(
                 "https://gateway.marvel.com/v1/public/comics?"
@@ -144,11 +154,11 @@ export const Filter = () => {
         }
     }, [selectedCharacter, selectedCreator]);
 
-    const mobileFilterClickHandler = () => {
+    const mobileFilterClickHandler: filterClickHandlerFn = () => {
         setShowMobileFilter((prev) => !prev);
     };
 
-    const mobileFavoritesClickHandler = () => {
+    const mobileFavoritesClickHandler: filterClickHandlerFn = () => {
         setShowMobileFavorites((prev) => !prev);
     };
 

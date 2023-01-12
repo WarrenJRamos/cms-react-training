@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import Context from "../../context/index-store";
 import classes from "../../styles/Home/Content.module.css";
+import Context from "../../context/index-store";
 import { ComicsGrid } from "../Comics/ComicsGrid";
 import { ErrorMessage } from "../Comics/ErrorMessage";
 import { LoadingMessage } from "../Comics/LoadingMessage";
@@ -10,6 +10,7 @@ import { IntroTextBox } from "./IntroTextBox";
 
 export const Content = () => {
     const context = useContext(Context);
+    
     return (
         <div className={`${classes["content"]}`}>
             <IntroTextBox />
@@ -18,12 +19,15 @@ export const Content = () => {
                     <Filter />
                     {context.isLoading && <LoadingMessage />}
                     {context.hasError && <ErrorMessage />}
-                    {!context.isLoading && !context.hasError && context.isSuccess && (
-                        <ComicsGrid />
-                    )}
+                    {!context.isLoading &&
+                        !context.hasError &&
+                        context.isSuccess && <ComicsGrid />}
                 </div>
                 <div className={`${classes["body__right"]}`}>
-                    <Favorites className="desktop" closeFavoritesHandler={null}/>
+                    <Favorites
+                        className="desktop"
+                        closeFavoritesHandler={null}
+                    />
                 </div>
             </div>
         </div>

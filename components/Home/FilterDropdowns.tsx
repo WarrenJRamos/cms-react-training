@@ -1,8 +1,15 @@
 import React from "react";
 import classes from "../../styles/Home/FilterDropdowns.module.css";
 
-
-export const FilterDropdowns = ({selectedCharacter, onCharacterChange, characterFilterOptions, selectedCreator, onCreatorChange, creatorFilterOptions, className}) => {
+export const FilterDropdowns = ({
+    selectedCharacter,
+    onCharacterChange,
+    characterFilterOptions,
+    selectedCreator,
+    onCreatorChange,
+    creatorFilterOptions,
+    className,
+}) => {
     return (
         <div className={`${classes[className]}`}>
             <select
