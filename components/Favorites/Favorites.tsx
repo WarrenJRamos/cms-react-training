@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Favorites/Favorites.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import { FavoriteItem } from "./FavoriteItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 
 export const Favorites = ({ className, closeFavoritesHandler }) => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
     
     return (
         <div className={`${classes["favorites"]} ${classes[className]}`}>

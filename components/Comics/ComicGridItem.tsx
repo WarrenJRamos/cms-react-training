@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Comics/ComicGridItem.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import Image from "next/image";
 import { FavoritesButton } from "./FavoritesButton";
 import { Detail } from "./Detail";
@@ -11,7 +11,7 @@ type ComicGridItemProps = {
 };
 
 export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
 
     if (!comicData) {
         return null;

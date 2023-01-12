@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Header/Menu.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Menu = () => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
     
     return (
         <menu className={`${classes["menu"]}`}>

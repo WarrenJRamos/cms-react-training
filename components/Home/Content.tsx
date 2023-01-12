@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Home/Content.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import { ComicsGrid } from "../Comics/ComicsGrid";
 import { ErrorMessage } from "../Comics/ErrorMessage";
 import { LoadingMessage } from "../Comics/LoadingMessage";
@@ -9,7 +9,7 @@ import { Filter } from "./Filter";
 import { IntroTextBox } from "./IntroTextBox";
 
 export const Content = () => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
     
     return (
         <div className={`${classes["content"]}`}>

@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { fetchDataFn, getMarvelComicsResourceUrlFn } from "../hooks/use-request";
 import { ComicData } from "../types/shared_types";
 
-interface AppContextInterface {
+export interface AppContextInterface {
     comics: ComicData[];
     setComics: React.Dispatch<React.SetStateAction<ComicData[]>>;
     favorites: ComicData[];

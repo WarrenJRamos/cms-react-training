@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Favorites/FavoriteItem.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,7 @@ import { ComicData } from "../../types/shared_types";
 type onRemoveHandlerFn = () => void;
 
 export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
 
     const onRemoveHandler: onRemoveHandlerFn = () => {
         console.log(`Removing ${id} from favorites`);

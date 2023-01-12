@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Comics/FavoritesButton.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 import { ComicData } from "../../types/shared_types";
@@ -20,7 +20,7 @@ export const FavoritesButton = ({
     alreadyInFavorites,
     disableButton,
 }: FavoritesButtonProps) => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
 
     const addToFavorites: addToFavoritesFn = () => {
         console.log(`Adding ${comicData.id} to favorites`);

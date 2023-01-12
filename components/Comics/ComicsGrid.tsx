@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import classes from "../../styles/Comics/ComicsGrid.module.css";
-import Context from "../../context/index-store";
+import Context, { AppContextInterface } from "../../context/index-store";
 import { Pagination } from "./Pagination";
 import { ComicGridItem } from "./ComicGridItem";
 import { NoComicsMessage } from "./NoComicsMessage";
 import { usePagination } from "../../hooks/use-pagination";
 
 export const ComicsGrid = () => {
-    const context = useContext(Context);
+    const context = useContext<AppContextInterface>(Context);
     const {
         currentPage,
         setCurrentPage,
