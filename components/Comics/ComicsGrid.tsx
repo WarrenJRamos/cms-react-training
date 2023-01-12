@@ -4,6 +4,7 @@ import Context from "../../context/index-store";
 import { Pagination } from "./Pagination";
 import { ComicGridItem } from "./ComicGridItem";
 import { ComicData } from "../../types/shared_types";
+import { NoComicsMessage } from "./NoComicsMessage";
 
 export const ComicsGrid = () => {
     const context = useContext(Context);
@@ -32,6 +33,10 @@ export const ComicsGrid = () => {
         Page: ${currentPage}
         Length of Current Comics: ${currentComics.length}
     `);
+
+    if (comics.length === 0) {
+        return <NoComicsMessage />
+    }
 
     return (
         <>

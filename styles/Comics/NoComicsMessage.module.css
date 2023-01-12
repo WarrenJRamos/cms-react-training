@@ -1,0 +1,7 @@
+.no-comics-msg {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 50px;
+    text-align: center;
+}
