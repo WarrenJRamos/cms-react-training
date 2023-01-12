@@ -19,12 +19,6 @@
     flex-basis: 265px;
 }
 
-/* @media screen and (min-width: 769px) {
-    .content .body .body__right {
-        display: block;
-    }
-} */
-
 @media screen and (min-width: 900px) {
     .content .body .body__right {
         display: block;

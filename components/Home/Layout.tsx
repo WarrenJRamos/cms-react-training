@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "../../styles/Home/Layout.module.css";
 import { Header } from "../Header/Header";
 import { Hero } from "./Hero";
 import { Footer } from "../Footer/Footer";
@@ -8,8 +9,10 @@ export const Layout = () => {
     return (
         <>
             <Header />
-            <Hero />
-            <Content />
+            <main className={`${classes["main"]}`}>
+                <Hero />
+                <Content />
+            </main>
             <Footer />
         </>
     );

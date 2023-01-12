@@ -18,12 +18,12 @@
     }
 }
 
-.filter__header {
+.filter .filter__header {
     display: none;
 }
 
 @media screen and (min-width: 900px) {
-    .filter__header {
+    .filter .filter__header {
         display: inline;
     }
 }
@@ -41,13 +41,7 @@
     }
 }
 
-/* .filter .filter__header--mobile div:first-child {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-} */
-
-.filter .filter__header--mobile .filterButton {
+.filter .filter__header--mobile .filter-btn {
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -58,7 +52,7 @@
     font-weight: bold;
 }
 
-.filter .filter__header--mobile .filterButton svg {
+.filter .filter__header--mobile .filter-btn svg {
     width: 14px;
 }
 

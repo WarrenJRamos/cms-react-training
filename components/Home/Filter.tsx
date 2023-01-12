@@ -171,7 +171,7 @@ export const Filter = () => {
                 <div>
                     <button
                         onClick={mobileFilterClickHandler}
-                        className={`${classes["filterButton"]}`}
+                        className={`${classes["filter-btn"]}`}
                     >
                         <span>Filter</span>
                         <FontAwesomeIcon icon={faFilter} />

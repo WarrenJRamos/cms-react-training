@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "../styles/Home.module.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Layout } from "../components/Home/Layout";
@@ -60,7 +59,7 @@ export default function Home() {
         hasError,
         setHasError,
     };
-    
+
     return (
         <div>
             <Head>
@@ -72,11 +71,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={`${classes["main"]}`}>
-                <Context.Provider value={ctx}>
-                    <Layout />
-                </Context.Provider>
-            </main>
+            <Context.Provider value={ctx}>
+                <Layout />
+            </Context.Provider>
         </div>
     );
 }
