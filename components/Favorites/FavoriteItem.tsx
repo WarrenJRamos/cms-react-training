@@ -37,7 +37,7 @@ export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
                     height={75}
                 />
                 <button
-                    className={`${classes["item__remove"]}`}
+                    className={`${classes["remove-btn"]}`}
                     onClick={onRemoveHandler}
                 >
                     <FontAwesomeIcon icon={faX} />

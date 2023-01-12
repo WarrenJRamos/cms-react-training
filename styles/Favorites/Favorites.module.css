@@ -30,7 +30,7 @@
     }
 }
 
-.favorites__title {
+.favorites .favorites__title {
     padding: 20px 30px 0;
     font-size: 25px;
     line-height: 30px;
@@ -39,31 +39,31 @@
 }
 
 @media screen and (min-width: 900px) {
-    .favorites__title {
+    .favorites .favorites__title {
         text-align: center;
     }
 }
 
-.favorites__comics {
+.favorites .favorites__comics {
     display: flex;
     flex-direction: column;
     gap: 47px;
     padding: 29px 30px;
 }
 
-.favorites__footer {
+.favorites .favorites__footer {
     background-color: var(--color-pink-2);
     display: flex;
     justify-content: center;
 }
 
 @media screen and (min-width: 900px) {
-    .favorites__footer {
+    .favorites .favorites__footer {
         display: none;
     }
 }
 
-.favorites__footer--button {
+.favorites .favorites__footer--button {
     border: none;
     background-color: inherit;
     display: flex;

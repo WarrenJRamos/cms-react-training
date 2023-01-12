@@ -4,39 +4,62 @@
     gap: 10px;
 }
 
-.item__thumbnail {
+.item .item__thumbnail {
     position: relative;
 }
 
-.item__remove {
-    padding: 0 5px;
+.item .item__thumbnail .remove-btn {
+    padding: 10px;
     border-radius: 50%;
     position: absolute;
-    left: -10px;
-    top: -10px;
+    left: -15px;
+    top: -15px;
     border: none;
+    width: 35px;
+    height: 35px;
+    opacity: 0.8;
 }
 
-.item__remove > svg {
-    width: 6px;
+@media screen and (min-width: 900px) {
+    .item .item__thumbnail .remove-btn {
+        left: -10px;
+        top: -10px;
+        padding: 0 6px;
+        width: unset;
+        height: unset;
+    }
+}
+
+.item .item__thumbnail .remove-btn > svg {
+    width: 10px;
+    height: 15px;
     color: var(--color-pink-2);
 }
 
-.item__content {
+@media screen and (min-width: 900px) {
+    .item .item__thumbnail .remove-btn > svg {
+        width: 6px;
+        height: unset;
+    }
+}
+
+.item .item__content {
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-family: var(--font-family-2);
+}
+
+.item .item__content .item__content-title {
+    line-height: 16px;
+    font-weight: bold;
     font-size: 14px;
 }
 
-.item__content-title {
-    line-height: 16px;
-    font-weight: bold;
-}
-
-.item__content-issue {
+.item .item__content .item__content-issue {
     line-height: 17px;
     display: flex;
     gap: 5px;
+    font-weight: 400;
+    font-size: 14px;
 }
