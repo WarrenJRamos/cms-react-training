@@ -1,12 +1,19 @@
 .footer {
     height: 268px;
-    background: var(--color-dark-2) 0% 0% no-repeat padding-box;
+    background: var(--color-dark-2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 45px 0;
+    padding: 29px 20px;
     color: var(--color-light-1);
+    font-size: 14px;
+}
+
+@media screen and (min-width: 769px) {
+    .footer {
+        padding: 45px 20px;
+    }
 }
 
 .footer__info {
@@ -20,4 +27,8 @@
 
 .footer__info-item {
     text-decoration: underline;
+}
+
+.footer__copyright {
+    text-align: center;
 }
