@@ -4,10 +4,13 @@ import { Logo } from "./Logo";
 import { Menu } from "./Menu";
 import { MobileMenu } from "./MobileMenu";
 
-export const Header = () => {
-    const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] = useState(false);
+type onHamburgerMenuClickFn = () => void;
 
-    const onHamburgerMenuClick = () => {
+export const Header = () => {
+    const [isHamburgerMenuOpen, setIsHamburgerMenuOpen] =
+        useState<boolean>(false);
+
+    const onHamburgerMenuClick: onHamburgerMenuClickFn = () => {
         setIsHamburgerMenuOpen((prev) => !prev);
     };
 
