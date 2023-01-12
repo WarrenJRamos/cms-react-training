@@ -18,6 +18,7 @@
     width: 35px;
     height: 35px;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 900px) {

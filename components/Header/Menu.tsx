@@ -9,8 +9,8 @@ export const Menu = () => {
     
     return (
         <menu className={`${classes["menu"]}`}>
-            <li className={`${classes["menu-item"]}`}>Home</li>
-            <li className={`${classes["menu-item"]}`}>Shop</li>
+            <li className={`${classes["menu-item"]}`}><a href="#">Home</a></li>
+            <li className={`${classes["menu-item"]}`}><a href="#">Shop</a></li>
             <li className={`${classes["menu-item"]}`}>
                 <span className={`${classes["bolt"]}`}>
                     <FontAwesomeIcon icon={faBoltLightning} />

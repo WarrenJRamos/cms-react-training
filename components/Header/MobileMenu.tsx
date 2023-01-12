@@ -33,10 +33,10 @@ export const MobileMenu = ({ onHamburgerMenuClick, isHamburgerMenuOpen }) => {
                     }`}
                 >
                     <li className={`${classes["hamburger-menu__item"]}`}>
-                        Home
+                        <a href="#">Home</a>
                     </li>
                     <li className={`${classes["hamburger-menu__item"]}`}>
-                        Shop
+                        <a href="#">Shop</a>
                     </li>
                 </ul>
             </li>
