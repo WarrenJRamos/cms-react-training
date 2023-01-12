@@ -23,8 +23,8 @@ export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
     const favoriteLimitHasBeenReached: boolean = context.favorites.length >= 10;
 
     return (
-        <div className={classes["comic"]} data-testid="comic">
-            <div className={`${classes["thumbnail-container"]}`}>
+        <article className={classes["comic"]} data-testid="comic">
+            <section className={`${classes["thumbnail-container"]}`}>
                 <Image
                     src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
                     alt={comicData.title}
@@ -36,15 +36,15 @@ export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
                     alreadyInFavorites={alreadyInFavorites}
                     disableButton={favoriteLimitHasBeenReached}
                 />
-            </div>
-            <div className={`${classes["comic-body"]}`}>
+            </section>
+            <section className={`${classes["comic-body"]}`}>
                 <h3 data-testid="title" className={`${classes["comic-body__title"]}`}>{comicData.title}</h3>
                 <Detail
                     issueNumber={comicData.issueNumber}
                     publishDate={comicData.dates[0].date}
                     creators={comicData.creators}
                 />
-            </div>
-        </div>
+            </section>
+        </article>
     );
 };

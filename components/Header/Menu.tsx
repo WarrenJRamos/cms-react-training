@@ -8,7 +8,7 @@ export const Menu = () => {
     const context = useContext(Context);
     
     return (
-        <ul className={`${classes["menu"]}`}>
+        <menu className={`${classes["menu"]}`}>
             <li className={`${classes["menu-item"]}`}>Home</li>
             <li className={`${classes["menu-item"]}`}>Shop</li>
             <li className={`${classes["menu-item"]}`}>
@@ -20,6 +20,6 @@ export const Menu = () => {
                     ({context.favorites.length})
                 </span>
             </li>
-        </ul>
+        </menu>
     );
 };

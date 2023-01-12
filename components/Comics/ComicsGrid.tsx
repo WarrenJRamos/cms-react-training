@@ -34,7 +34,7 @@ export const ComicsGrid = () => {
     `);
 
     return (
-        <div className={`${classes["container"]}`}>
+        <>
             <div className={`${classes["grid"]}`}>
                 {currentComics.map((comic) => {
                     return <ComicGridItem key={comic.id} comicData={comic} />;
@@ -51,6 +51,6 @@ export const ComicsGrid = () => {
                 setCurrentPage={setCurrentPage}
                 disableRightPagination={disableRightPagination}
             />
-        </div>
+        </>
     );
 };

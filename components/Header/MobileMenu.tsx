@@ -8,7 +8,7 @@ export const MobileMenu = ({ onHamburgerMenuClick, isHamburgerMenuOpen }) => {
     const context = useContext(Context);
     
     return (
-        <ul className={`${classes["menu"]}`}>
+        <menu className={`${classes["menu"]}`}>
             <li className={`${classes["menu-item"]}`}>
                 <span className={`${classes["bolt"]}`}>
                     <FontAwesomeIcon icon={faBoltLightning} />
@@ -40,6 +40,6 @@ export const MobileMenu = ({ onHamburgerMenuClick, isHamburgerMenuOpen }) => {
                     </li>
                 </ul>
             </li>
-        </ul>
+        </menu>
     );
 };

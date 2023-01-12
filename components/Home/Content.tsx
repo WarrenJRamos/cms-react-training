@@ -14,22 +14,22 @@ export const Content = () => {
     return (
         <div className={`${classes["content"]}`}>
             <IntroTextBox />
-            <div className={`${classes["body"]}`}>
-                <div className={`${classes["body__left"]}`}>
+            <article className={`${classes["body"]}`}>
+                <section className={`${classes["body__left"]}`}>
                     <Filter />
                     {context.isLoading && <LoadingMessage />}
                     {context.hasError && <ErrorMessage />}
                     {!context.isLoading &&
                         !context.hasError &&
                         context.isSuccess && <ComicsGrid />}
-                </div>
-                <div className={`${classes["body__right"]}`}>
+                </section>
+                <section className={`${classes["body__right"]}`}>
                     <Favorites
                         className="desktop"
                         closeFavoritesHandler={null}
                     />
-                </div>
-            </div>
+                </section>
+            </article>
         </div>
     );
 };

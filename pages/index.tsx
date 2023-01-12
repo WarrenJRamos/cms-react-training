@@ -1,9 +1,10 @@
+import React from "react";
+import classes from "../styles/Home.module.css";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Layout } from "../components/Home/Layout";
 import Context from "../context/index-store";
 import useRequest from "../hooks/use-request";
-import classes from "../styles/Home.module.css";
 import { ComicData } from "../types/shared_types";
 
 export default function Home() {
@@ -59,6 +60,7 @@ export default function Home() {
         hasError,
         setHasError,
     };
+    
     return (
         <div>
             <Head>
