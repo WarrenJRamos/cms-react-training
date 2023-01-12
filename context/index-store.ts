@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { fetchDataFn, getMarvelComicsResourceUrlFn } from "../hooks/use-request";
 import { ComicData } from "../types/shared_types";
 
 interface AppContextInterface {
@@ -12,6 +13,8 @@ interface AppContextInterface {
     setIsSuccess: React.Dispatch<React.SetStateAction<boolean>>;
     hasError: boolean
     setHasError: React.Dispatch<React.SetStateAction<boolean>>;
+    fetchData: fetchDataFn;
+    getMarvelComicsResourceUrl: getMarvelComicsResourceUrlFn;
 }
 
 const Context = createContext<AppContextInterface | null>(null);

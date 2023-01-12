@@ -46,7 +46,6 @@ export default function Home() {
             });
     }, []);
 
-    // remove loading, success, hasError from context
     const ctx = {
         comics,
         setComics,
@@ -58,6 +57,8 @@ export default function Home() {
         setIsSuccess,
         hasError,
         setHasError,
+        fetchData,
+        getMarvelComicsResourceUrl
     };
 
     return (

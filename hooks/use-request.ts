@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type getMarvelComicsResourceUrlFn = (endpoint: string) => string;
+export type getMarvelComicsResourceUrlFn = (endpoint: string) => string;
 
 type GenericObject = { [key: string]: any };
 
@@ -13,7 +13,7 @@ type RequestConfig = {
     body?: GenericObject;
 };
 
-type fetchDataFn = (requestConfig: RequestConfig) => Promise<GenericObject>;
+export type fetchDataFn = (requestConfig: RequestConfig) => Promise<GenericObject>;
 
 const useRequest = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);

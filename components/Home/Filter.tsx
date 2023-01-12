@@ -95,22 +95,22 @@ export const Filter = () => {
             );
         }
         console.log(`Sending a request to ${path}`);
-        fetchData({ endpoint: path })
+        context.fetchData({ endpoint: path })
             .then((data) => {
                 console.log(data);
                 context.setComics(data.data.results);
-                setIsLoading(false);
-                setIsSuccess(true);
+                context.setIsLoading(false);
+                context.setIsSuccess(true);
             })
             .catch((error) => {
-                setHasError(error);
-                setIsSuccess(false);
-                setIsLoading(false);
+                context.setHasError(error);
+                context.setIsSuccess(false);
+                context.setIsLoading(false);
             });
     };
 
     const fetchDefaultComics: fetchDataFn = () => {
-        fetchData({
+        context.fetchData({
             endpoint: getMarvelComicsResourceUrl(
                 "https://gateway.marvel.com/v1/public/comics?"
             ),
@@ -118,13 +118,13 @@ export const Filter = () => {
             .then((data) => {
                 console.log(data);
                 context.setComics(data.data.results);
-                setIsLoading(false);
-                setIsSuccess(true);
+                context.setIsLoading(false);
+                context.setIsSuccess(true);
             })
             .catch((error) => {
-                setHasError(error);
-                setIsSuccess(false);
-                setIsLoading(false);
+                context.setHasError(error);
+                context.setIsSuccess(false);
+                context.setIsLoading(false);
             });
     };
 
