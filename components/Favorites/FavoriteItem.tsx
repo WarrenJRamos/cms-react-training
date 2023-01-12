@@ -1,17 +1,21 @@
-import Image from "next/image";
 import React, { useContext } from "react";
-import Context from "../../context/index-store";
 import classes from "../../styles/Favorites/FavoriteItem.module.css";
+import Context from "../../context/index-store";
+import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { ComicData } from "../../types/shared_types";
+
+type onRemoveHandlerFn = () => void;
 
 export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
     const context = useContext(Context);
-    const onRemoveHandler = () => {
+
+    const onRemoveHandler: onRemoveHandlerFn = () => {
         console.log(`Removing ${id} from favorites`);
         context.setFavorites((prevFavorites) => {
-            const newFavorites = [...prevFavorites];
-            const index = prevFavorites.findIndex((favorite) => {
+            const newFavorites: ComicData[] = [...prevFavorites];
+            const index: number = prevFavorites.findIndex((favorite) => {
                 return favorite.id === id;
             });
             newFavorites.splice(index, 1);
@@ -22,6 +26,7 @@ export const FavoriteItem = ({ id, title, issue, thumbnail }) => {
             return newFavorites;
         });
     };
+
     return (
         <li className={`${classes["item"]}`}>
             <div className={`${classes["item__thumbnail"]}`}>
