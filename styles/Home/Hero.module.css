@@ -18,7 +18,7 @@
 .hero::before {
     content: "";
     background: transparent
-        linear-gradient(180deg, #000000b3 0%, #00000000 100%) 0% 0% no-repeat
+        linear-gradient(180deg, var(--color-gray-3) 0%, var(--color-light-2) 100%) 0% 0% no-repeat
         padding-box;
     position: absolute;
     top: 0;
@@ -37,7 +37,7 @@
 }
 
 .hero .hero__header {
-    background-color: #c24868e6;
+    background-color: var(--color-pink-1);
     width: 256px;
     height: 66px;
     padding: 16px 31px;
@@ -64,14 +64,14 @@
     font-weight: 900;
     font-size: 27px;
     line-height: 33px;
-    color: #f8f8f2;
+    color: var(--color-light-1);
     text-shadow: 2px 2px 0px #000000;
 }
 
 @media screen and (min-width: 481px) {
     .hero .hero__header .hero__header-text {
         font-size: 35px;
-        text-shadow: 3px 3px 0px #000000;
+        text-shadow: 3px 3px 0px var(--color-dark-1);
     }
 }
 

@@ -19,7 +19,7 @@
 
 .item__remove > svg {
     width: 6px;
-    color: #c24868;
+    color: var(--color-pink-2);
 }
 
 .item__content {

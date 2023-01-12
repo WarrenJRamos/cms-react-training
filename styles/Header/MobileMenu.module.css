@@ -4,7 +4,7 @@
     flex-direction: row;
     align-items: center;
     gap: 16px;
-    color: #f8f8f2;
+    color: var(--color-light-1);
     font-size: 18px;
     font-weight: bold;
 }
@@ -64,7 +64,7 @@
     width: 55px;
     height: 43px;
     padding: 10px 16px;
-    border: 2px solid #f8f8f2;
+    border: 2px solid var(--color-light-1);
     border-radius: 5px;
     background: inherit;
 }
@@ -82,7 +82,7 @@
     right: 0;
     padding: 20px;
     background-color: rgba(20, 20, 20, 0.9);
-    border: 2px solid #f8f8f2;
+    border: 2px solid var(--color-light-1);
     border-radius: 5px;
     list-style: none;
 }

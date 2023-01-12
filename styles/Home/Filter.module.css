@@ -1,7 +1,7 @@
 .filter {
-    background: #222222 0% 0% no-repeat padding-box;
+    background: var(--color-dark-2) 0% 0% no-repeat padding-box;
     padding: 20px 10px;
-    color: #f8f8f2;
+    color: var(--color-light-1);
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -53,7 +53,7 @@
     gap: 5px;
     background: inherit;
     border: none;
-    color: #f8f8f2;
+    color: var(--color-light-1);
     font-family: Montserrat;
     font-weight: bold;
 }
@@ -63,7 +63,7 @@
 }
 
 .filter .filter__header--mobile .favorites-btn {
-    color: #f8f8f2;
+    color: var(--color-light-1);
     background: inherit;
     border: none;
     display: flex;

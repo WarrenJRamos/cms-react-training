@@ -14,14 +14,14 @@
     width: 35px;
     height: 35px;
     border-radius: 9999px;
-    background: #222222;
+    background: var(--color-dark-2);
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
 
 .pagination__arrow > svg {
-    color: #f8f8f2;
+    color: var(--color-light-1);
     font-size: 18px;
     line-height: 16px;
     width: 8px;
