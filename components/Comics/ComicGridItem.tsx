@@ -1,10 +1,10 @@
-import Image from "next/image";
 import React, { useContext } from "react";
+import classes from "../../styles/Comics/ComicGridItem.module.css";
+import Context from "../../context/index-store";
+import Image from "next/image";
 import { FavoritesButton } from "./FavoritesButton";
 import { Detail } from "./Detail";
-import classes from "../../styles/Comics/ComicGridItem.module.css";
 import { ComicData } from "../../types/shared_types";
-import Context from "../../context/index-store";
 
 type ComicGridItemProps = {
     comicData: ComicData;
@@ -17,10 +17,10 @@ export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
         return null;
     }
 
-    const alreadyInFavorites = context.favorites.find(
+    const alreadyInFavorites: ComicData = context.favorites.find(
         (favorite) => favorite.id === comicData.id
     );
-    const favoriteLimitHasBeenReached = context.favorites.length >= 10;
+    const favoriteLimitHasBeenReached: boolean = context.favorites.length >= 10;
 
     return (
         <div className={classes["comic"]} data-testid="comic">

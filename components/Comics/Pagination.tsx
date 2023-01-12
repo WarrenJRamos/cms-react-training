@@ -1,10 +1,12 @@
+import React from "react";
+import classes from "../../styles/Comics/Pagination.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faChevronRight,
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
-import classes from "../../styles/Comics/Pagination.module.css";
+
+type chevronClickHandlerFn = () => void;
 
 export const Pagination = ({
     range,
@@ -14,31 +16,31 @@ export const Pagination = ({
     setCurrentPage,
     disableRightPagination,
 }) => {
-    const onLeftChevronClickHandler = () => {
-        setCurrentPage((prev) => {
+    const onLeftChevronClickHandler: chevronClickHandlerFn = () => {
+        setCurrentPage((prev: number) => {
             return prev - 1;
         });
     };
-    const onRightChevronClickHandler = () => {
-        setCurrentPage((prev) => {
+    const onRightChevronClickHandler: chevronClickHandlerFn = () => {
+        setCurrentPage((prev: number) => {
             return prev + 1;
         });
     };
 
-    const disableLeftChevron = currentPage !== 1;
-    const disableRightChevron = disableRightPagination;
+    const disableLeftChevron: boolean = currentPage !== 1;
+    const disableRightChevron: boolean = disableRightPagination;
 
     console.log(`
     range.start ${range.start}
     range.end ${range.end}
-    `)
+    `);
 
-    let start = range.start + 1;
+    let start: number = range.start + 1;
     if (totalNumberOfComics === 0) {
         start = 0;
     }
 
-    let end = range.end;
+    let end: number = range.end;
     if (range.end > totalNumberOfComics) {
         end = totalNumberOfComics;
     }

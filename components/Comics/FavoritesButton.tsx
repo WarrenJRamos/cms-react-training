@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 import React, { useContext } from "react";
 import classes from "../../styles/Comics/FavoritesButton.module.css";
 import Context from "../../context/index-store";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 import { ComicData } from "../../types/shared_types";
 
 type FavoritesButtonProps = {
@@ -11,6 +11,10 @@ type FavoritesButtonProps = {
     disableButton: boolean;
 };
 
+type addToFavoritesFn = () => void;
+
+type removeFromFavoritesFn = () => void;
+
 export const FavoritesButton = ({
     comicData,
     alreadyInFavorites,
@@ -18,10 +22,10 @@ export const FavoritesButton = ({
 }: FavoritesButtonProps) => {
     const context = useContext(Context);
 
-    const addToFavorites = () => {
+    const addToFavorites: addToFavoritesFn = () => {
         console.log(`Adding ${comicData.id} to favorites`);
         context.setFavorites((prevFavorites) => {
-            const newFavorites = [...prevFavorites, { ...comicData }];
+            const newFavorites: ComicData[] = [...prevFavorites, { ...comicData }];
             localStorage.setItem(
                 "favorite_comics",
                 JSON.stringify(newFavorites)
@@ -30,11 +34,11 @@ export const FavoritesButton = ({
         });
     };
 
-    const removeFromFavorites = () => {
+    const removeFromFavorites: removeFromFavoritesFn = () => {
         console.log(`Removing ${comicData.id} from favorites`);
         context.setFavorites((prevFavorites) => {
-            const newFavorites = [...prevFavorites];
-            const index = prevFavorites.findIndex((favorite) => {
+            const newFavorites: ComicData[] = [...prevFavorites];
+            const index: number = prevFavorites.findIndex((favorite) => {
                 return favorite.id === comicData.id;
             });
             newFavorites.splice(index, 1);

@@ -5,11 +5,11 @@ type getCreatorsFn = (creators: Creator) => string;
 type getDateFn = (publishDate: string) => string;
 
 export const getCreators: getCreatorsFn = (creators) => {
-    const creatorsGroup = creators.items.map((creator) => {
+    const creatorsGroup: string[] = creators.items.map((creator) => {
         const lastName = creator.name.split(" ")[1];
         return lastName;
     });
-    const creatorsFormatted =
+    const creatorsFormatted: string =
         creatorsGroup.length > 0 ? creatorsGroup.join(", ") : "N/A";
     return creatorsFormatted;
 };
@@ -29,9 +29,9 @@ export const getDate: getDateFn = (publishDate) => {
         "November",
         "December",
     ];
-    const date = new Date(publishDate);
-    const month = monthNames[date.getMonth()];
-    const dateNumber = date.getDate();
-    const year = date.getFullYear();
+    const date: Date = new Date(publishDate);
+    const month: string = monthNames[date.getMonth()];
+    const dateNumber: number = date.getDate();
+    const year: number = date.getFullYear();
     return `${month} ${dateNumber}, ${year}`;
 };
