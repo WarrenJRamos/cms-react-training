@@ -8,7 +8,6 @@ import classes from "../../styles/Home/Filter.module.css";
 import Context from "../../context/index-store";
 import { faBoltLightning, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import useRequest from "../../hooks/use-request";
 import { Favorites } from "../Favorites/Favorites";
 import { FilterDropdowns } from "./FilterDropdowns";
 
@@ -43,16 +42,6 @@ const creatorFilterOptions: filterOptionsType = [
 ];
 
 export const Filter = () => {
-    const {
-        getMarvelComicsResourceUrl,
-        fetchData,
-        isLoading,
-        setIsLoading,
-        isSuccess,
-        setIsSuccess,
-        hasError,
-        setHasError,
-    } = useRequest();
     const context = useContext(Context);
     const [selectedCharacter, setSelectedCharacter] = useState<string>(
         characterFilterOptions[0].value
@@ -80,17 +69,17 @@ export const Filter = () => {
         let path: string;
         if (selectedCharacter && selectedCreator) {
             console.log("Character and Creator Selected");
-            path = getMarvelComicsResourceUrl(
+            path = context.getMarvelComicsResourceUrl(
                 `https://gateway.marvel.com/v1/public/creators/${selectedCreator}/comics?characters=${selectedCharacter}&`
             );
         } else if (selectedCharacter) {
             console.log("Character Selected");
-            path = getMarvelComicsResourceUrl(
+            path = context.getMarvelComicsResourceUrl(
                 `https://gateway.marvel.com/v1/public/characters/${selectedCharacter}/comics?`
             );
         } else if (selectedCreator) {
             console.log("Creator Selected");
-            path = getMarvelComicsResourceUrl(
+            path = context.getMarvelComicsResourceUrl(
                 `https://gateway.marvel.com/v1/public/creators/${selectedCreator}/comics?`
             );
         }
@@ -111,7 +100,7 @@ export const Filter = () => {
 
     const fetchDefaultComics: fetchDataFn = () => {
         context.fetchData({
-            endpoint: getMarvelComicsResourceUrl(
+            endpoint: context.getMarvelComicsResourceUrl(
                 "https://gateway.marvel.com/v1/public/comics?"
             ),
         })

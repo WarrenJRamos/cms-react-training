@@ -11,7 +11,6 @@ type chevronClickHandlerFn = () => void;
 export const Pagination = ({
     range,
     totalNumberOfComics,
-    totalNumberOfCurrentComics,
     currentPage,
     setCurrentPage,
     disableRightPagination,
