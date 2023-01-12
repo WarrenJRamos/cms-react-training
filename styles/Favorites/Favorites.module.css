@@ -44,6 +44,11 @@
     }
 }
 
+.favorites .favorites__no-favorites {
+    text-align: center;
+    font-size: 24px;
+}
+
 .favorites .favorites__comics {
     display: flex;
     flex-direction: column;

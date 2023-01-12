@@ -11,6 +11,7 @@ export const Favorites = ({ className, closeFavoritesHandler }) => {
     return (
         <div className={`${classes["favorites"]} ${classes[className]}`}>
             <h2 className={`${classes["favorites__title"]}`}>Favorites</h2>
+            {context.favorites.length === 0 && <p className={`${classes["favorites__no-favorites"]}`}>No favorites</p>}
             <ul className={`${classes["favorites__comics"]}`}>
                 {context.favorites.map((favorite) => {
                     return (
