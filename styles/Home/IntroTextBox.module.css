@@ -6,7 +6,7 @@
     position: absolute;
     top: -35px;
     left: -11px;
-    background: var(--color-green-1) 0% 0% no-repeat padding-box;
+    background: var(--color-green-1);
     transform: rotate(-3deg);
     padding: 9px 15px;
     color: var(--color-light-1);

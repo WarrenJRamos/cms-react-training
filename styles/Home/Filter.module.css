@@ -1,5 +1,5 @@
 .filter {
-    background: var(--color-dark-2) 0% 0% no-repeat padding-box;
+    background: var(--color-dark-2);
     padding: 20px 10px;
     color: var(--color-light-1);
     font-weight: bold;

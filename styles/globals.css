@@ -1,4 +1,5 @@
 :root {
+    /* colors */
     --color-light-1: #F8F8F2;
     --color-pink-1: #C24868E6;
     --color-dark-1: #000000;
@@ -10,8 +11,12 @@
     --color-gray-3: #000000B3;
     --color-light-2: #00000000;
     --color-gray-4: #00000075;
+    
+    /* fonts */
     --font-family-1: Montserrat, sans-serif;
     --font-family-2: Karla,"Times New Roman";
+
+    /* font-sizes */
 }
 
 html,

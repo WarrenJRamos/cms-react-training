@@ -18,8 +18,11 @@
 .hero::before {
     content: "";
     background: transparent
-        linear-gradient(180deg, var(--color-gray-3) 0%, var(--color-light-2) 100%) 0% 0% no-repeat
-        padding-box;
+        linear-gradient(
+            180deg,
+            var(--color-gray-3) 0%,
+            var(--color-light-2) 100%
+        );
     position: absolute;
     top: 0;
     width: 100%;
