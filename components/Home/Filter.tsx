@@ -67,12 +67,12 @@ export const Filter = () => {
     const onCharacterChange: ChangeEventHandler<HTMLSelectElement> = (
         event
     ) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setSelectedCharacter(event.target.value);
     };
 
     const onCreatorChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         setSelectedCreator(event.target.value);
     };
 

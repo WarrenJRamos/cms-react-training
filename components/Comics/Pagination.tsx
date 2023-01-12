@@ -30,10 +30,10 @@ export const Pagination = ({
     const disableLeftChevron: boolean = currentPage !== 1;
     const disableRightChevron: boolean = disableRightPagination;
 
-    console.log(`
-    range.start ${range.start}
-    range.end ${range.end}
-    `);
+    // console.log(`
+    // range.start ${range.start}
+    // range.end ${range.end}
+    // `);
 
     let start: number = range.start + 1;
     if (totalNumberOfComics === 0) {

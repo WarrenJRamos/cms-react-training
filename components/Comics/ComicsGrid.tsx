@@ -27,12 +27,12 @@ export const ComicsGrid = () => {
         indexOfLastComic
     );
 
-    console.log(`
-        Index of First Comic: ${indexOfFirstComic}
-        Index of Last Comic: ${indexOfLastComic}
-        Page: ${currentPage}
-        Length of Current Comics: ${currentComics.length}
-    `);
+    // console.log(`
+    //     Index of First Comic: ${indexOfFirstComic}
+    //     Index of Last Comic: ${indexOfLastComic}
+    //     Page: ${currentPage}
+    //     Length of Current Comics: ${currentComics.length}
+    // `);
 
     if (comics.length === 0) {
         return <NoComicsMessage />
