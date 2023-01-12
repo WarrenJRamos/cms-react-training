@@ -21,7 +21,7 @@
     }
 }
 
-.button.favorited {
+.button.button--favorited {
     border: 2px solid white;
     background-color: var(--color-pink-2);
 }

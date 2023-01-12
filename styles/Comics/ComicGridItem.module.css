@@ -14,23 +14,23 @@
     }
 }
 
-.comic .thumbnail-container {
+.comic .comic__thumbnail-ctr {
     position: relative;
 }
 
-.comic .thumbnail-container img {
+.comic .comic__thumbnail-ctr img {
     width: 125px;
     height: 188px;
 }
 
 @media screen and (min-width: 481px) {
-    .comic .thumbnail-container img {
+    .comic .comic__thumbnail-ctr img {
         width: 183px;
         height: 276px;
     }
 }
 
-.comic .comic-body {
+.comic .comic__body {
     flex-basis: 203px;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
     font-size: 16px;
 }
 
-.comic .comic-body .comic-body__title {
+.comic .comic__body .comic__body-title {
     font-size: 16px;
     font-weight: bold;
 }

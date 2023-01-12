@@ -53,7 +53,7 @@ export const FavoritesButton = ({
     return (
         <button
             className={`${classes["button"]} ${
-                alreadyInFavorites && classes["favorited"]
+                alreadyInFavorites && classes["button--favorited"]
             }`}
             onClick={alreadyInFavorites ? removeFromFavorites : addToFavorites}
             disabled={disableButton && !alreadyInFavorites}

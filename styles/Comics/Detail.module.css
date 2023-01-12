@@ -1,4 +1,4 @@
-.detail-list {
+.list {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -7,11 +7,11 @@
     font-family: var(--font-family-2);
 }
 
-.detail-list-item:not(:first-of-type) {
+.list .list__item:not(:first-of-type) {
     display: flex;
     flex-direction: column;
 }
 
-.lead {
+.list .list__item .lead {
     font-weight: bold;
 }

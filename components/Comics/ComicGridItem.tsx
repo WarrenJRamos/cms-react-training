@@ -24,7 +24,7 @@ export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
 
     return (
         <article className={classes["comic"]} data-testid="comic">
-            <section className={`${classes["thumbnail-container"]}`}>
+            <section className={`${classes["comic__thumbnail-ctr"]}`}>
                 <Image
                     src={`${comicData.thumbnail.path}.${comicData.thumbnail.extension}`}
                     alt={comicData.title}
@@ -37,8 +37,8 @@ export const ComicGridItem = ({ comicData }: ComicGridItemProps) => {
                     disableButton={favoriteLimitHasBeenReached}
                 />
             </section>
-            <section className={`${classes["comic-body"]}`}>
-                <h3 data-testid="title" className={`${classes["comic-body__title"]}`}>{comicData.title}</h3>
+            <section className={`${classes["comic__body"]}`}>
+                <h3 data-testid="title" className={`${classes["comic__body-title"]}`}>{comicData.title}</h3>
                 <Detail
                     issueNumber={comicData.issueNumber}
                     publishDate={comicData.dates[0].date}
