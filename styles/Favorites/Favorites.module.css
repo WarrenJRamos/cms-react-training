@@ -59,7 +59,7 @@
 
 @media screen and (min-width: 900px) {
     .favorites .favorites__comics {
-        padding: 0px 30px;
+        padding: 0px 30px 40px;
     }
 }
 
